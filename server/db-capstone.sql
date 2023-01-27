@@ -1,13 +1,12 @@
 /* CREATING DB */
-CREATE DATABASE philanthropy;
 
-USE philanthropy;
+USE Capstone;
 
 -- DROP DATABASE philanthropy;
 
 /* CREATING TABLES */ 
 
-CREATE TABLE `philanthropy`.`organizations` (
+CREATE TABLE `Capstone`.`organizations` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
     `user_id` INT NOT NULL, -- fk
@@ -26,7 +25,7 @@ CREATE TABLE `philanthropy`.`organizations` (
     FOREIGN KEY (`interest_id`) REFERENCES `interests`(`id`)
 );
 
-CREATE TABLE `philanthropy`.`mentors` (
+CREATE TABLE `Capstone`.`mentors` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `firstname` VARCHAR(100) NOT NULL,
     `lastname` VARCHAR(100) NOT NULL,
@@ -42,21 +41,21 @@ CREATE TABLE `philanthropy`.`mentors` (
     FOREIGN KEY (`interest_id`) REFERENCES `interests`(`id`)
 );
 
-CREATE TABLE `philanthropy`.`organization_types` (
+CREATE TABLE `Capstone`.`organization_types` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `philanthropy`.`interests` (
+CREATE TABLE `Capstone`.`interests` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `philanthropy`.`user_logins` (
+CREATE TABLE `Capstone`.`user_logins` (
   `user_id` INT NOT NULL AUTO_INCREMENT, -- pk
   `role_id` INT NOT NULL, -- fk
   `login_email` VARCHAR(150) NOT NULL,
@@ -67,14 +66,14 @@ CREATE TABLE `philanthropy`.`user_logins` (
   FOREIGN KEY (`role_id`) REFERENCES `account_roles`(`id`)
 );
   
-CREATE TABLE `philanthropy`.`account_roles` (
+CREATE TABLE `Capstone`.`account_roles` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `role` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
 ); 
   
-CREATE TABLE `philanthropy`.`resources` (
+CREATE TABLE `Capstone`.`resources` (
   `id` INT NOT NULL AUTO_INCREMENT, -- pk
   `title` VARCHAR(100) NOT NULL,
   `category_id` INT NOT NULL, -- fk
@@ -85,14 +84,14 @@ CREATE TABLE `philanthropy`.`resources` (
   FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
 
-CREATE TABLE `philanthropy`.`resource_categories` (
+CREATE TABLE `Capstone`.`resource_categories` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `philanthropy`.`locations` (
+CREATE TABLE `Capstone`.`locations` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `abbrev` VARCHAR(2) NOT NULL,
     `name` VARCHAR(30) NOT NULL,
@@ -101,22 +100,23 @@ CREATE TABLE `philanthropy`.`locations` (
 );
 
 -- junction table --> many-to-many --> use joins here to visualize data/relationships
-CREATE TABLE `philanthropy`.`resource_avail_byarea` (
+
+CREATE TABLE `Capstone`.`resource_avail_byarea` (
 	`state_id` INT NOT NULL, -- fk
     `resource_id` INT NOT NULL, -- fk
     
-    FOREIGN KEY (`state_id`) REFERENCES `philanthropy`.`locations`(`id`),
-    FOREIGN KEY (`resource_id`) REFERENCES `philanthropy`.`resources`(`ID`)
+    FOREIGN KEY (`state_id`) REFERENCES `Capstone`.`locations`(`id`),
+    FOREIGN KEY (`resource_id`) REFERENCES `Capstone`.`resources`(`ID`)
 );
 
 /* INSERTING DATA */
 
-INSERT INTO `philanthropy`.`interests`(`name`)
+INSERT INTO `Capstone`.`interests`(`name`)
 VALUES ('technology'),('education'),('retail'),('restaurant'),('logistics'),('health');
 
-INSERT INTO `philanthropy`.`account_roles`(`role`)
+INSERT INTO `Capstone`.`account_roles`(`role`)
 VALUES ('admin'), ('hr'), ('organization'), ('mentor'); -- admin adds hr team, hr add resources and then organization/mentor user roles
 
-INSERT INTO `philanthropy`.`locations`(`abbrev`, `name`)
+INSERT INTO `Capstone`.`locations`(`abbrev`, `name`)
 VALUES ('AL', 'Alabama'), ('AK', 'Alaska'), ('AZ', 'Arizona'), ('AR', 'Arkansas'), ('AS', 'American Samoa'), ('CA', 'California'), ('CO', 'Colorado'), ('CT', 'Connecticut'), ('DE', 'Delaware'), ('DC', 'District of Columbia'), ('FL', 'Florida'), ('GA', 'Georgia'), ('GU','Guam'), ('HI', 'Hawaii'), ('ID', 'Idaho'), ('IL', 'Illinois'), ('IN', 'Indiana'), ('IA', 'Iowa'), ('KS', 'Kansas'), ('KY', 'Kentucky'), ('LA', 'Louisiana'), ('ME', 'Maine'), ('MD', 'Maryland'), ('MA', 'Massachussetts'), ('MI', 'Michigan'), ('MN', 'Minnesota'), ('MS', 'Mississippi'), ('MO', 'Missouri'), ('MT', 'Montana'), ('NE', 'Nebraska'), ('NV', 'Nevada'), ('NH', 'New Hampshire'), ('NJ', 'New Jersey'), ('NM', 'New Mexico'), ('NY', 'New York'), ('NC', 'North Carolina'), ('ND', 'North Dakota'), ('MP', 'Northern Mariana Islands'), ('OH', 'Ohio'), ('OK', 'Oklahoma'), ('OR', 'Oregon'), ('PA', 'Pennsylvania'), ('PR', 'Puerto Rico'), ('RI', 'Rhode Island'), ('SC', 'South Carolina'), ('SD', 'South Dakota'), ('TN', 'Tennessee'), ('TX', 'Texas'), ('UT', 'Utah'), ('VT', 'Vermont'), ('VA', 'Virginia'), ('VI', 'Virgin Islands'), ('WA', 'Washington'), ('WV', 'West Virginia'), ('WI', 'Wisconsin'), ('WY', 'Wyoming');
 
