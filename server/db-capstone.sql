@@ -84,14 +84,29 @@ CREATE TABLE `philanthropy`.`resources` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
-  
--- need to add states table and junction table (resources AND states - meet in the middle - many-to-many -> RESEARCH)
 
 CREATE TABLE `philanthropy`.`resource_categories` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `philanthropy`.`locations` (
+	`id` INT NOT NULL AUTO_INCREMENT, -- pk
+    `abbrev` VARCHAR(2) NOT NULL,
+    `name` VARCHAR(30) NOT NULL,
+    
+    PRIMARY KEY (`id`)
+);
+
+-- junction table --> many-to-many --> use joins here to visualize data/relationships
+CREATE TABLE `philanthropy`.`resource_avail_byarea` (
+	`state_id` INT NOT NULL, -- fk
+    `resource_id` INT NOT NULL, -- fk
+    
+    FOREIGN KEY (`state_id`) REFERENCES `philanthropy`.`locations`(`id`),
+    FOREIGN KEY (`resource_id`) REFERENCES `philanthropy`.`resources`(`ID`)
 );
 
 /* INSERTING DATA */
@@ -102,4 +117,6 @@ VALUES ('technology'),('education'),('retail'),('restaurant'),('logistics'),('he
 INSERT INTO `philanthropy`.`account_roles`(`role`)
 VALUES ('admin'), ('hr'), ('organization'), ('mentor'); -- admin adds hr team, hr add resources and then organization/mentor user roles
 
+INSERT INTO `philanthropy`.`locations`(`abbrev`, `name`)
+VALUES ('AL', 'Alabama'), ('AK', 'Alaska'), ('AZ', 'Arizona'), ('AR', 'Arkansas'), ('AS', 'American Samoa'), ('CA', 'California'), ('CO', 'Colorado'), ('CT', 'Connecticut'), ('DE', 'Delaware'), ('DC', 'District of Columbia'), ('FL', 'Florida'), ('GA', 'Georgia'), ('GU','Guam'), ('HI', 'Hawaii'), ('ID', 'Idaho'), ('IL', 'Illinois'), ('IN', 'Indiana'), ('IA', 'Iowa'), ('KS', 'Kansas'), ('KY', 'Kentucky'), ('LA', 'Louisiana'), ('ME', 'Maine'), ('MD', 'Maryland'), ('MA', 'Massachussetts'), ('MI', 'Michigan'), ('MN', 'Minnesota'), ('MS', 'Mississippi'), ('MO', 'Missouri'), ('MT', 'Montana'), ('NE', 'Nebraska'), ('NV', 'Nevada'), ('NH', 'New Hampshire'), ('NJ', 'New Jersey'), ('NM', 'New Mexico'), ('NY', 'New York'), ('NC', 'North Carolina'), ('ND', 'North Dakota'), ('MP', 'Northern Mariana Islands'), ('OH', 'Ohio'), ('OK', 'Oklahoma'), ('OR', 'Oregon'), ('PA', 'Pennsylvania'), ('PR', 'Puerto Rico'), ('RI', 'Rhode Island'), ('SC', 'South Carolina'), ('SD', 'South Dakota'), ('TN', 'Tennessee'), ('TX', 'Texas'), ('UT', 'Utah'), ('VT', 'Vermont'), ('VA', 'Virginia'), ('VI', 'Virgin Islands'), ('WA', 'Washington'), ('WV', 'West Virginia'), ('WI', 'Wisconsin'), ('WY', 'Wyoming');
 
