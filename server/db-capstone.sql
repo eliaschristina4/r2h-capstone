@@ -2,43 +2,38 @@
 
 USE Capstone;
 
--- DROP DATABASE philanthropy;
-
 /* CREATING TABLES */ 
 
-CREATE TABLE `Capstone`.`organizations` (
+CREATE TABLE `Capstone`.`businesses` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
-    `name` VARCHAR(100) NOT NULL,
+    `business_name` VARCHAR(100) NOT NULL,
     `user_id` INT NOT NULL, -- fk
     `type_id` INT NOT NULL, -- fk
+    `description` VARCHAR(200) NOT NULL,
     `location` VARCHAR(100) NULL,
-	`contact_firstname` VARCHAR(100) NOT NULL,
-	`contact_lastname` VARCHAR(100) NOT NULL,
-	`contact_email` VARCHAR(150) NOT NULL,
-	`contact_phone` VARCHAR(100) NULL,
+	`owner_fullname` VARCHAR(100) NOT NULL,
+	`email` VARCHAR(150) NOT NULL,
+	`phone` VARCHAR(100) NULL,
 	`website` VARCHAR(200) NULL,
-	`interest_id` INT NOT NULL, -- fk
     
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`),
-    FOREIGN KEY (`type_id`) REFERENCES `organization_types`(`id`),
-    FOREIGN KEY (`interest_id`) REFERENCES `interests`(`id`)
+    FOREIGN KEY (`type_id`) REFERENCES `organization_types`(`id`)
 );
 
 CREATE TABLE `Capstone`.`mentors` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
-    `firstname` VARCHAR(100) NOT NULL,
-    `lastname` VARCHAR(100) NOT NULL,
+    `fullname` VARCHAR(100) NOT NULL,
+    `profession` VARCHAR(100) NOT NULL,
     `user_id` INT NOT NULL, -- fk
+    `description` VARCHAR(200) NOT NULL,
     `location` VARCHAR(100) NULL,
 	`contact_email` VARCHAR(150) NOT NULL,
 	`contact_phone` VARCHAR(100) NULL,
 	`website` VARCHAR(200) NULL,
-	`interest_id` INT NOT NULL, -- fk
     
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`),
-    FOREIGN KEY (`interest_id`) REFERENCES `interests`(`id`)
+    FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`)
 );
 
 CREATE TABLE `Capstone`.`organization_types` (
@@ -53,6 +48,16 @@ CREATE TABLE `Capstone`.`interests` (
     `name` VARCHAR(100) NOT NULL,
     
     PRIMARY KEY (`id`)
+);
+
+-- junction table --> mentors' + business' professional interests
+
+CREATE TABLE `Capstone`.`interests_by_user` (
+	`interest_id` INT NOT NULL, --  fk
+    `user_id` INT NOT NULL, -- fk
+    
+    FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`),
+    FOREIGN KEY (`user_id`) REFERENCES `Capstone`.`user_logins`(`user_id`)
 );
 
 CREATE TABLE `Capstone`.`user_logins` (
@@ -100,7 +105,6 @@ CREATE TABLE `Capstone`.`locations` (
 );
 
 -- junction table --> many-to-many --> use joins here to visualize data/relationships
-
 CREATE TABLE `Capstone`.`resource_avail_byarea` (
 	`state_id` INT NOT NULL, -- fk
     `resource_id` INT NOT NULL, -- fk
