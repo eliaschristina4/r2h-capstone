@@ -1,0 +1,166 @@
+/* 
+RED: rgb (227, 24, 55)
+BLUE: rgb (41, 68, 129) 
+*/
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Home {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 200px;
+}
+
+.hero-text {
+    padding-right: 30px;
+    width: 50%
+}
+
+h1 {
+    color: rgb(227, 24, 55);
+    font-size: 3em;
+}
+
+.hero-text p {
+    width: 70%;
+    margin-bottom: 75px;
+    color: black;
+}
+
+.hero-text a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(227, 24, 55);
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.hero-text a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.hero-img {
+    padding-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .hero-img img {
+    width: 350px;
+}
+
+.hero-text a, .explore-container a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(227, 24, 55);
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.hero-text a:visited, .explore-container a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* middle section */
+
+.explore-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 100px 0;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.explore-container p {
+    font-size: 1em;
+}
+
+.explore-container ul {
+    display: flex;
+    flex-direction: column;
+
+    border-style: none none none solid; 
+}
+
+.explore-container li {
+    font-size: 0.75em;
+    padding-left: 20px;
+}
+
+.financial-assistance, .fund-growth, .maximize-potential {
+    background-color: rgb(41, 68, 129);
+    color: white;
+    width: 30%;
+    padding: 50px;
+}
+
+.financial-assistance {
+    margin-right: 50px;
+}
+
+.maximize-potential {
+    margin-left: 50px;
+}
+
+/* bottom sections */
+
+.investing-container {
+    background: rgb(227, 24, 55);
+    padding: 50px 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px
+}
+
+.bottom-img img {
+    width: 350px;
+}
+
+.bottom-text {
+    padding-left: 30px;
+}
+
+.bottom-text h2 {
+    font-size: 2.5em;
+}
+
+.bottom-text p {
+    width: 70%;
+    margin-bottom: 75px;
+}
+
+.bottom-text a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(41, 68, 129) ;
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.bottom-text a:visited {
+    text-decoration: none;
+    color: white;
+}

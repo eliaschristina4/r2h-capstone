@@ -1,0 +1,55 @@
+/* 
+RED: rgb (227, 24, 55)
+BLUE: rgb (41, 68, 129) 
+*/
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: rgb(41, 68, 129);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .boa-logo {
+    width: 30%;
+}
+
+nav {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: white;
+}
+
+.socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials-container img {
+    width: 50px;
+    margin: 0 25px;
+}
+
+.fdic-copyright-container {
+    margin-top: 20px;;
+}
+
+p {
+    font-size: .75em;
+}
