@@ -7,9 +7,9 @@ export default function Header(){
 
             <nav>
                 <ul>
-                    <li>Resources</li>
-                    <li>Mentor</li>
-                    <li>About Us</li>
+                    <a href='#'><li>Resources</li></a>
+                    <a href='#'><li>Mentor</li></a>
+                    <a href='#'><li>About Us</li></a>
                 </ul>
 
                 <section className='icon-container'>

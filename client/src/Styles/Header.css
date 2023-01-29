@@ -10,14 +10,14 @@ body {
 }
 
 header {
-    padding: 20px 40px;
+    padding: 20px 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 header img {
-    width: 30%;
+    width: 25%;
     align-self: center;
 }
 
@@ -40,7 +40,11 @@ ul {
     align-items: center;
 }
 
-li {
+header a {
+    text-decoration: none;
+}
+
+a li {
     padding-right: 50px;
     color: rgb(41, 68, 129) 
 }

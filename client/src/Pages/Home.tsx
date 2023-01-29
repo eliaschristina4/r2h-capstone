@@ -24,7 +24,7 @@ export default function Home () {
             <li>Access to education resources and training programs that will help you develop skills and knowledge for a successful business</li>
           </ul>
 
-          <a target='_blank' href='#'>Explore Scholarships</a>
+          <a target='_blank' href='#' id='explore-btn'>Explore Scholarships</a>
         </div>
 
         <div className='fund-growth'>
