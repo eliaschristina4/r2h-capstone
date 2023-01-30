@@ -36,6 +36,18 @@ CREATE TABLE `Capstone`.`mentors` (
     FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`)
 );
 
+CREATE TABLE `Capstone`.`employees` (
+	`id` INT NOT NULL AUTO_INCREMENT, -- pk
+    `fullname` VARCHAR(100) NOT NULL,
+    `description` VARCHAR(200) NOT NULL,
+    `user_id` INT NOT NULL, -- fk
+    `email` VARCHAR(150) NOT NULL,
+	`phone` VARCHAR(100) NULL,
+    
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`)
+);
+
 CREATE TABLE `Capstone`.`organization_types` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `name` VARCHAR(100) NOT NULL,
