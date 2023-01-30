@@ -30,6 +30,7 @@ export default function Mentors() {
 
     return (
         <div className='Mentors'>
+            <h1>Mentors</h1>
             {mentorList.map(mentor => (
                 <div key={mentor.id}>
                     <img src='#' alt='mentor profile picture' className='mentor-pfp' />
