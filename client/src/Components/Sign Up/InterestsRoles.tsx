@@ -11,6 +11,7 @@ interface Roles {
 }
 
 export const InterestsRoles = (rolesData: Roles) => {
+  console.log(rolesData);
   return (
     <>
       <p className="sign-up-title">{rolesData.title}</p>

@@ -7,6 +7,9 @@ import { Header } from "../Components/Header";
 import { Form } from "../Components/Sign Up/Form";
 import { InterestsRoles } from "../Components/Sign Up/InterestsRoles";
 
+// CSS
+import "../Styles/SignUp.css";
+
 // Interface
 
 // Sign Up Form data
@@ -56,13 +59,15 @@ export const SignUp = () => {
     },
   });
 
+  const [roles, setRoles] = useState([]);
+
   const parameters: string | undefined = useParams().user;
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target.form);
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    console.log({ ...data, roles: roles });
   };
 
   useEffect(() => {
@@ -114,8 +119,13 @@ export const SignUp = () => {
 
             <input type="submit" value="Sign Up" onClick={handleSubmit}></input>
           </form>
+          <p className="redirect-sign-up">
+            Not a Mentor or a Business? Sign up as an Employee
+          </p>
         </section>
-        <section className="icon-section"></section>
+        <section className="icon-section">
+          <img></img>
+        </section>
       </main>
       <Footer />
     </section>
