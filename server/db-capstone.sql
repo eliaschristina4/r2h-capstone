@@ -17,10 +17,12 @@ CREATE TABLE `Capstone`.`businesses` (
 	`email` VARCHAR(150) NOT NULL,
 	`phone` VARCHAR(100) NULL,
 	`website` VARCHAR(200) NULL,
+    `interest_id` INT NOT NULL, -- fk
     
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`),
-    FOREIGN KEY (`type_id`) REFERENCES `organization_types`(`id`)
+    FOREIGN KEY (`type_id`) REFERENCES `organization_types`(`id`),
+    FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)
 );
 
 CREATE TABLE `Capstone`.`mentors` (
@@ -33,9 +35,11 @@ CREATE TABLE `Capstone`.`mentors` (
 	`contact_email` VARCHAR(150) NOT NULL,
 	`contact_phone` VARCHAR(100) NULL,
 	`website` VARCHAR(200) NULL,
+    `interest_id` INT NOT NULL, -- fk
     
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`)
+    FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`),
+    FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)
 );
 
 -- DUMMY DATA
@@ -51,9 +55,6 @@ CREATE TABLE `Capstone`.`mentors` (
     -- INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
 	-- VALUES ('4', 'bobama@whitehouse.gov', 'barryorules', '2023-01-30');
 -- ^^^ DUMMY DATA ^^^
-
-select * from user_logins;
-select * from mentors;
 
 CREATE TABLE `Capstone`.`employees` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
@@ -81,16 +82,6 @@ CREATE TABLE `Capstone`.`interests` (
     PRIMARY KEY (`id`)
 );
 
--- junction table --> mentors' + business' professional interests
-
-CREATE TABLE `Capstone`.`interests_by_user` (
-	`interest_id` INT NOT NULL, --  fk
-    `user_id` INT NOT NULL, -- fk
-    
-    FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `Capstone`.`user_logins`(`user_id`)
-);
-
 CREATE TABLE `Capstone`.`user_logins` (
   `user_id` INT NOT NULL AUTO_INCREMENT, -- pk
   `role_id` INT NOT NULL, -- fk
@@ -115,8 +106,10 @@ CREATE TABLE `Capstone`.`resources` (
   -- `category_id` INT NOT NULL, -- fk
   `description` VARCHAR(200) NOT NULL,
   `monetary_value` DECIMAL(7) NULL,
+  `interest_id` INT NOT NULL, -- fk
   
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)-- fk
   -- FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
 
