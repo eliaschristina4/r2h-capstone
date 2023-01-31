@@ -16,7 +16,7 @@ header {
     justify-content: space-between;
 }
 
-header img {
+#header-logo {
     width: 25%;
     align-self: center;
 }
@@ -29,6 +29,9 @@ nav {
     flex-direction: row;
 }
 
+.Header nav ul, .Header nav div ul {
+    align-items: center;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -37,8 +40,8 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
+
 
 header a {
     text-decoration: none;
@@ -49,42 +52,100 @@ a li {
     color: rgb(41, 68, 129) 
 }
 
-section img {
+.icon-container img {
     width: 50px;
 }
 
+#container {
+    display: none;
+}
+
 /* menu toggle */
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    cursor: pointer;
-  }
-  
-  .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: rgb(227, 24, 55);
-    margin: 3px 0;
-    transition: 0.4s;
-  }
-  
-  .change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
-  }
-  
-  .change .bar2 {opacity: 0;}
-  
-  .change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
-  }
+
 
 @media screen and (max-width: 865px) {
-    nav ul {
+
+    header {
+        margin: 30px auto 0 auto;
+        padding: 0 auto;
+        display: flex;
         flex-direction: column;
     }
 
-    nav ul li {
+    #header-logo {
+        width: 350px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #static-ul {
         display: none
     }
+
+    #drop-down-ul {
+        flex-direction: column;
+        margin-top: 20px;
+        color: rgb(41, 68, 129); 
+    }
+
+    .showing {
+        display: block;
+        flex-direction: column;
+        margin-top: 20px;
+        color: rgb(41, 68, 129); 
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* hamburger menu */
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        cursor: pointer;
+    }
+  
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: rgb(227, 24, 55);
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+    .changed {
+        
+    }
+    
+    .changed .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+    }
+  
+    .changed .bar2 {
+        opacity: 0;
+    }
+  
+    .changed .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+    }
+
+
+
+    @media screen and (max-width: 465px) { 
+        .Header {
+            padding: 20px;
+        }
+        #header-logo {
+            width: 90%;
+        }
+    
+    }
+
 }

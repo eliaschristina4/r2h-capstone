@@ -4,7 +4,7 @@ export default function Footer(){
     return (
         <footer className='Footer'>
             
-            <img src={require('../Images/Footer/BOFA-logo-white.png')} alt='bank of america logo' className='boa-logo'/>
+            <img src={require('../Images/Footer/BOFA-logo-white.png')} alt='bank of america logo' id='footer-logo'/>
 
             <nav>
                 <ul>

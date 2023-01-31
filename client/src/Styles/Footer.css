@@ -19,8 +19,8 @@ footer {
     align-items: center;
 }
 
-footer .boa-logo {
-    width: 25%;
+#footer-logo {
+    width: 300px;
 }
 
 nav {
@@ -39,6 +39,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .socials-container img {
@@ -47,9 +48,31 @@ ul {
 }
 
 .fdic-copyright-container {
-    margin-top: 20px;;
+    margin-top: 20px;
+    text-align: center;
 }
 
 p {
     font-size: .75em;
+}
+
+@media screen and (max-width: 450px) {
+
+    #footer-logo {
+        width: 80%;
+    }
+
+    .Footer nav ul {
+        flex-direction: column;
+    }
+
+    .Footer nav ul li {
+        padding: 0;
+    }
+
+    .socials-container img {
+        width: 30px;
+        margin: 15px;
+    }
+
 }

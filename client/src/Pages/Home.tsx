@@ -16,11 +16,11 @@ export default function Home () {
 
       <section className='explore-container'>
         <div className='financial-assistance'>
-          <img src={require('../Images/Homepage/scholarship-icon.png')} alt='dollar sign icon' />
+          <img src={require('../Images/Homepage/scholarship-icon.png')} alt='dollar sign icon' className='explore-icons' />
           <h3>Unlock Financial Assistance</h3>
           <p>Our scholarship program is designed to provide financial assistance and opportunities to small business owners and entrepeneurs.</p>
           <ul>
-            <li>Help cover the costs of business expenses such as equipment, inventory, marketing, and more</li>
+            <li id='annoying-li'>Help cover the costs of business expenses such as equipment, inventory, marketing, and more</li>
             <li>Access to education resources and training programs that will help you develop skills and knowledge for a successful business</li>
           </ul>
 
@@ -28,7 +28,7 @@ export default function Home () {
         </div>
 
         <div className='fund-growth'>
-          <img src={require('../Images/Homepage/grants-icon.png')} alt='dollar sign icon' />
+          <img src={require('../Images/Homepage/grants-icon.png')} alt='dollar sign icon' className='explore-icons' />
           <h3>Fund Your Business Growth</h3>
           <p>Our grant program is designed to provide financial assistance that will help small bsinesses that are looking to expand their operations, invest in new equipment or hire additional staff.</p>
           <ul>
@@ -38,7 +38,7 @@ export default function Home () {
         </div>
 
         <div className='maximize-potential'>
-          <img src={require('../Images/Homepage/opportunities-icon.png')} alt='light-bulb icon' />
+          <img src={require('../Images/Homepage/opportunities-icon.png')} alt='light-bulb icon' className='explore-icons' />
           <h3>Maximize Your Small Business Potential</h3>
           <p>Our program is designed to provide access to resources, networking events, mentorship, programs, and more for small business owners.</p>
           <a target='_blank' href='#'>Explore Our Program</a>
