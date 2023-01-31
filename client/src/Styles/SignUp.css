@@ -74,7 +74,42 @@ input.btn{
     height: 40px;
 }
 
+@media only screen and (max-width: 768px) {
+    body {
 
-@media screen {
+        }
+
+  }
+
+@media only screen and (max-width: 425px) {
+    .sign-up-title{
+        font-size: 250%;
+        margin-left: -2px;
+    }
+
+    .sign-up-description{
+        font-size: 10px;
+        margin-left: -2px;
+  }
+
+  .form-input{
+    width: 350px;
+    margin-left: -2px;
+  }
+
+  textarea.form-input{
+    width: 350px;
+    margin-left: -2px;
+  }
+
+  .form-interest{
+    width: 20px;
+    margin-left: -2px;
+  }
+
+  input.btn{
+    width: 200px;
+    margin-left: -2px;
     
+  }
 }
