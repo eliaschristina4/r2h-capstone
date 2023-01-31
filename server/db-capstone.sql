@@ -1,8 +1,10 @@
 /* CREATING DB */
 
+CREATE DATABASE Capstone;
 USE Capstone;
 
 /* CREATING TABLES */ 
+
 
 CREATE TABLE `Capstone`.`businesses` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
@@ -37,18 +39,21 @@ CREATE TABLE `Capstone`.`mentors` (
 );
 
 -- DUMMY DATA
-	INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
-	VALUES ('Jane Smith', 'Computer Engineer', '1', 'Smith is a world-renown Computer Engineer.', 'NC', 'janesmith@gmail.com', '555-555-555', 'janesmith.com'); 
+	-- INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
+	-- VALUES ('Jane Smith', 'Computer Engineer', '1', 'Smith is a world-renown Computer Engineer.', 'NC', 'janesmith@gmail.com', '555-555-555', 'janesmith.com'); 
 
-	INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
-	VALUES ('4', 'janesmith@gmail.com', 'jane123', '2023-01-30');
+	-- INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
+	-- VALUES ('4', 'janesmith@gmail.com', 'jane123', '2023-01-30');
     
-    INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
-	VALUES ('Barack Obama', 'Former President', '2', 'Obama was president of the United States. Miss him <3.', 'DC', 'bobama@whitehouse.gov', '555-555-5555', 'barackobama.com');
+    -- INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
+	-- VALUES ('Barack Obama', 'Former President', '2', 'Obama was president of the United States. Miss him <3.', 'DC', 'bobama@whitehouse.gov', '555-555-5555', 'barackobama.com');
     
-    INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
-	VALUES ('4', 'bobama@whitehouse.gov', 'barryorules', '2023-01-30');
+    -- INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
+	-- VALUES ('4', 'bobama@whitehouse.gov', 'barryorules', '2023-01-30');
 -- ^^^ DUMMY DATA ^^^
+
+select * from user_logins;
+select * from mentors;
 
 CREATE TABLE `Capstone`.`employees` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
@@ -107,12 +112,12 @@ CREATE TABLE `Capstone`.`account_roles` (
 CREATE TABLE `Capstone`.`resources` (
   `id` INT NOT NULL AUTO_INCREMENT, -- pk
   `title` VARCHAR(100) NOT NULL,
-  `category_id` INT NOT NULL, -- fk
+  -- `category_id` INT NOT NULL, -- fk
   `description` VARCHAR(200) NOT NULL,
   `monetary_value` DECIMAL(7) NULL,
   
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
+  PRIMARY KEY (`id`)
+  -- FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
 
 CREATE TABLE `Capstone`.`resource_categories` (
