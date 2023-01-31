@@ -35,11 +35,11 @@ export const Form = (formData: SignUpFormData) => {
         placeholder={formData.formTag2}
         name={formData.formTag2}
       ></input>
-      <input
+      <textarea
         className="form-input"
         placeholder={formData.formTag3}
         name={formData.formTag3}
-      ></input>
+      ></textarea>
     </>
   );
 };

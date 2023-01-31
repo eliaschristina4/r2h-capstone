@@ -90,8 +90,12 @@ export const SignUp = () => {
             {/* Top Section */}
             <Form {...signUpForm.form} />
 
+            <hr />
+
             {/* Middle Section */}
             <InterestsRoles {...signUpForm.roles} />
+            
+            <hr />
 
             {/* Bottom Section */}
             <p className="sign-up-title">Sign Up Information</p>
@@ -117,7 +121,7 @@ export const SignUp = () => {
               name="confirmPassword"
             ></input>
 
-            <input type="submit" value="Sign Up" onClick={handleSubmit}></input>
+            <input className="btn" type="submit" value="Sign Up" onClick={handleSubmit}></input>
           </form>
           <p className="redirect-sign-up">
             Not a Mentor or a Business? Sign up as an Employee
