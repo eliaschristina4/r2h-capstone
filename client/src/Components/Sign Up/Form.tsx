@@ -11,16 +11,42 @@ interface SignUpFormData {
 export const Form = (formData: SignUpFormData) => {
   const navigate = useNavigate();
   const parameters: string | undefined = useParams().user;
+
+  const processInput = (input: string) => {
+    let [firstWord, ...restOfString] = input.split(" ");
+    return restOfString.length === 0
+      ? input.toLowerCase()
+      : `${firstWord.toLowerCase()}${restOfString.join(" ")}`;
+  };
+
   return (
     <>
       <p
         className="redirect-sign-up"
         onClick={() =>
-          navigate(`/signup/${parameters === "mentor" ? "business" : "mentor"}`)
+          navigate(
+            `/signup/${
+              parameters === "mentor"
+                ? "business"
+                : parameters === "hr"
+                ? "business"
+                : "mentor"
+            }`
+          )
         }
       >
-        Not a {parameters === "business" ? "Business" : "Mentor"}? Sign Up as a{" "}
-        {parameters === "mentor" ? "Business" : "Mentor"}
+        Not a{" "}
+        {parameters === "business"
+          ? "Business"
+          : parameters === "hr"
+          ? "Employee"
+          : "Mentor"}
+        ? Sign Up as a{" "}
+        {parameters === "mentor"
+          ? "Business"
+          : parameters === "hr"
+          ? "Business"
+          : "Mentor"}
       </p>
 
       <p className="sign-up-title">{formData.title}</p>
@@ -28,17 +54,20 @@ export const Form = (formData: SignUpFormData) => {
       <input
         className="form-input"
         placeholder={formData.formTag1}
-        name={formData.formTag1}
+        name={processInput(formData.formTag1)}
+        required
       ></input>
       <input
         className="form-input"
         placeholder={formData.formTag2}
-        name={formData.formTag2}
+        name={processInput(formData.formTag2)}
+        required
       ></input>
       <input
         className="form-input"
         placeholder={formData.formTag3}
-        name={formData.formTag3}
+        name={processInput(formData.formTag3)}
+        required
       ></input>
     </>
   );
