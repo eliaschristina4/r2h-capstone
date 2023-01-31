@@ -7,24 +7,31 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+.Home a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(227, 24, 55);
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.Home a:visited {
+    text-decoration: none;
+    color: white;
 }
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 500px));
-    grid-column-gap: 40px;
-    grid-row-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(0, 400px));
     justify-content: center;
-    /* margin: 0 50px; */
-
-    /* display: flex;
-    flex-direction: row; */
-    /* padding: 50px 200px; */
+    margin: 0 auto;
 }
 
 .hero-text {
-    /* padding-right: 30px;
-    width: 50% */
+    padding-left: 50px;
 }
 
 h1 {
@@ -38,19 +45,6 @@ h1 {
     color: black;
 }
 
-.hero-text a {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(227, 24, 55);
-    padding: 15px 30px;
-    border-radius: 10px;
-}
-
-.hero-text a:visited {
-    text-decoration: none;
-    color: white;
-}
-
 .hero-img {
     /* padding-left: 30px; */
 
@@ -59,21 +53,10 @@ h1 {
     align-items: center;
 }
 
-main .hero-img img {
-    width: 350px;
-}
-
-.hero-text a, .explore-container a {
-    text-decoration: none;
-    color: white;
-    background-color: rgb(227, 24, 55);
-    padding: 15px 30px;
-    border-radius: 10px;
-}
-
-.hero-text a:visited, .explore-container a:visited {
-    text-decoration: none;
-    color: white;
+.hero-img img {
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
 }
 
 /* middle section */
@@ -82,8 +65,8 @@ main .hero-img img {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
-    margin: 100px auto;
+    width: 90%;
+    margin: 50px auto;
 }
 
 h3 {
@@ -112,22 +95,23 @@ h3 {
     width: 20%;
     padding: 50px;
     height: min-content;
+    margin: auto 0 0 0;
 }
 
 .financial-assistance {
-    margin-right: 50px;
+    /* margin-right: 50px; */
 
     left: 0;
 }
 
 .financial-assistance ul, .fund-growth ul {
-    margin-bottom:  30px;;
+    margin-bottom:  30px;
 }
 
-.fund-growth {}
+/* .fund-growth {} */
 
 .maximize-potential {
-    margin-left: 50px;
+    /* margin-left: 50px; */
     right: 0;
 }
 
@@ -135,34 +119,30 @@ h3 {
     margin-bottom: 50px;
 }
 
-/* bottom sections */
+/* bottom section */
 
 .investing-container {
     background: rgb(227, 24, 55);
     padding: 50px 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 500px));
-    grid-column-gap: 40px;
-    grid-row-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(0, 400px));
     justify-content: center;
-    /* display: flex;
-    flex-direction: row; */
 }
 
 .bottom-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-right: 30px */
 }
 
 .bottom-img img {
-    width: 350px;
+    width: 300px;
+    object-fit: contain;
 }
 
 .bottom-text {
-    /* padding-left: 30px; */
+    padding-left: 30px;
 }
 
 .bottom-text h2 {
@@ -175,28 +155,121 @@ h3 {
 }
 
 .bottom-text a {
-    text-decoration: none;
-    color: white;
     background-color: rgb(41, 68, 129) ;
-    padding: 15px 30px;
-    border-radius: 10px;
 }
 
-.bottom-text a:visited {
-    text-decoration: none;
-    color: white;
-}
+@media screen and (min-width: 1625px) {
 
-@media screen and (max-width: 939px) {
-
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(0, 300px));
-        margin: 0 25px;
+    .explore-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 70%;
+        
     }
 
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 920px) {
+
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+        /* margin: 0 25px; */
+    }
+
+    h1 {
+        font-size: 2.25em;
+    }
+
+    .explore-container {
+        width: 95%;
+        justify-content: space-between;
+        margin: 50px auto;
+    }
+
+    .bottom-text h2 {
+        font-size: 2.25em;
+    }
+
+}
+
+@media screen and (max-width: 849px) {
+
+    /* .main {
+        grid-template-columns: repeat(auto-fit, minmax(0, 300px));
+    } */
+
+    .hero-text {
+        grid-column-start: 0;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        padding-left: 50px;
+
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+        
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .hero-img img {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    /* .hero-text {
+        padding: 0;
+    } */
+
+    .explore-container {
+        flex-direction: column;
+    }
+
+    .financial-assistance, .fund-growth, .maximize-potential {
+        width: 80%;
+        padding: 30px;
+    }
+
+    .fund-growth {
+        margin: 40px 0;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .hero-text {
+        grid-column-start: 0;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 0
+    }
+
+    .hero-text p {
+        margin-bottom: 40px;
+    }
+
+    .hero-img {
+        grid-column-start: 0;
+        grid-column-end: 1;
+        grid-row-start: 0;
+        grid-row-end: 1;
+    }
+}
+
+/* @media screen and (max-width: 775px) {
 
     .main {
         grid-row-gap: 0;
@@ -233,5 +306,5 @@ h3 {
         width: 250px;
     }
 
-}
+} */
 
