@@ -5,7 +5,6 @@ USE Capstone;
 
 /* CREATING TABLES */ 
 
-
 CREATE TABLE `Capstone`.`businesses` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `business_name` VARCHAR(100) NOT NULL,
@@ -43,14 +42,18 @@ CREATE TABLE `Capstone`.`mentors` (
 );
 
 -- DUMMY DATA
-	-- INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
-	-- VALUES ('Jane Smith', 'Computer Engineer', '1', 'Smith is a world-renown Computer Engineer.', 'NC', 'janesmith@gmail.com', '555-555-555', 'janesmith.com'); 
+
+select * from mentors;
+select * from user_logins;
+
+-- INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`, `interest_id`) 
+-- VALUES ('Jane Smith', 'Computer Engineer', '1', 'Smith is a world-renown Computer Engineer.', 'NC', 'janesmith@gmail.com', '555-555-555', 'janesmith.com', 1); 
 
 	-- INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
-	-- VALUES ('4', 'janesmith@gmail.com', 'jane123', '2023-01-30');
+	-- 	VALUES ('4', 'janesmith@gmail.com', 'jane123', '2023-01-30');
     
-    -- INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`) 
-	-- VALUES ('Barack Obama', 'Former President', '2', 'Obama was president of the United States. Miss him <3.', 'DC', 'bobama@whitehouse.gov', '555-555-5555', 'barackobama.com');
+INSERT INTO `Capstone`.`mentors` (`fullname`, `profession`, `user_id`, `description`, `location`,`contact_email`, `contact_phone`, `website`, `interest_id`) 
+VALUES ('Barack Obama', 'Former President', '2', 'Obama was president of the United States. Miss him <3.', 'DC', 'bobama@whitehouse.gov', '555-555-5555', 'barackobama.com', 2);
     
     -- INSERT INTO `Capstone`.`user_logins` (`role_id`,`login_email`,`login_password`,`date_created`)
 	-- VALUES ('4', 'bobama@whitehouse.gov', 'barryorules', '2023-01-30');
@@ -112,6 +115,12 @@ CREATE TABLE `Capstone`.`resources` (
   FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)-- fk
   -- FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
+
+-- DUMMY DATA FOR RESOURCES (RAY)
+
+INSERT INTO `resources`(`title`,`description`, `monetary_value`, `interest_id`)
+VALUES('Best in Technology Grant', 'This is grant goes to the best small business in technology.','50000',1),('Health Sciences Scholarship', 'This scholarship will help someone at a health-related small business further their studies in the health sciences','10000',6);
+-- ^^^ DUMMY DATA ^^^
 
 CREATE TABLE `Capstone`.`resource_categories` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
