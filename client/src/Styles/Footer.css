@@ -1,0 +1,78 @@
+/* 
+RED: rgb (227, 24, 55)
+BLUE: rgb (41, 68, 129) 
+*/
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+footer {
+    padding: 40px 0;
+    background-color: rgb(41, 68, 129);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-logo {
+    width: 300px;
+}
+
+nav {
+    margin: 30px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.Footer li {
+    color: white;
+}
+
+.socials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.socials-container img {
+    width: 40px;
+    margin: 0 25px;
+}
+
+.fdic-copyright-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: .75em;
+}
+
+@media screen and (max-width: 450px) {
+
+    #footer-logo {
+        width: 80%;
+    }
+
+    .Footer nav ul {
+        flex-direction: column;
+    }
+
+    .Footer nav ul li {
+        padding: 0;
+    }
+
+    .socials-container img {
+        width: 30px;
+        margin: 15px;
+    }
+
+}
