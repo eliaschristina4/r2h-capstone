@@ -8,9 +8,9 @@ export default function Footer(){
 
             <nav>
                 <ul>
-                    <a href='#'><li>Resources</li></a>
-                    <a href='#'><li>Mentorships</li></a>
-                    <a href='#'><li>About Us</li></a>
+                    <a href='/resources'><li>Resources</li></a>
+                    <a href='/mentors'><li>Mentorships</li></a>
+                    <a href='/'><li>Home</li></a>
                 </ul>
             </nav>
 
