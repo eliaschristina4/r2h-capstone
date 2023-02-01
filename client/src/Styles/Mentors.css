@@ -3,11 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
-.Mentors input {
-    width: 2
-    00px;
+.Mentors input[type=radio] {
+    margin-right: 5px;
+}
+
+.Mentors label {
+    margin-right: 30px;
 }
 
 .grid-container {

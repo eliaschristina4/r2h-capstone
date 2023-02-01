@@ -97,28 +97,18 @@ CREATE TABLE `Capstone`.`account_roles` (
 CREATE TABLE `Capstone`.`resources` (
   `id` INT NOT NULL AUTO_INCREMENT, -- pk
   `title` VARCHAR(100) NOT NULL,
-  -- `category_id` INT NOT NULL, -- fk
   `description` VARCHAR(200) NOT NULL,
   `monetary_value` DECIMAL(7) NULL,
   `interest_id` INT NOT NULL, -- fk
   
   PRIMARY KEY (`id`),
   FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)-- fk
-  -- FOREIGN KEY (`category_id`) REFERENCES `resource_categories`(`id`)
 );
 
 -- DUMMY DATA FOR RESOURCES (RAY)
-
 INSERT INTO `resources`(`title`,`description`, `monetary_value`, `interest_id`)
 VALUES('Best in Technology Grant', 'This is grant goes to the best small business in technology.','50000',1),('Health Sciences Scholarship', 'This scholarship will help someone at a health-related small business further their studies in the health sciences','10000',6);
 -- ^^^ DUMMY DATA ^^^
-
-CREATE TABLE `Capstone`.`resource_categories` (
-	`id` INT NOT NULL AUTO_INCREMENT, -- pk
-    `name` VARCHAR(100) NOT NULL,
-    
-    PRIMARY KEY (`id`)
-);
 
 CREATE TABLE `Capstone`.`locations` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
