@@ -59,6 +59,9 @@ a li {
 #container {
   display: none;
 }
+header a {
+  margin: 0 0;
+}
 
 /* menu toggle */
 

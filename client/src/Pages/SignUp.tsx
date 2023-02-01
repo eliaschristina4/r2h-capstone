@@ -87,7 +87,6 @@ export const SignUp = () => {
     const formData = new FormData(e.target.form);
     const data = Object.fromEntries(formData.entries());
     if (data.password !== confirmPassword) {
-      console.error("Passwords do not match");
       setPasswordError(true);
     } else {
       setPasswordError(false);
@@ -108,8 +107,6 @@ export const SignUp = () => {
       setSignUpForm(tempData.hr);
     }
   }, [parameters]);
-
-  console.log(tempData.business.form.description);
 
   return (
     <section>
@@ -143,58 +140,14 @@ export const SignUp = () => {
                 <InterestsRoles
                   rolesData={signUpForm.roles}
                   handleChange={handleChange}
+                  opacity={opacity}
+                  passwordError={passwordError}
+                  handleSubmit={handleSubmit}
+                  setConfirmPassword={setConfirmPassword}
+                  confirmPassword={confirmPassword}
                 />
               </section>
-              <section className="sign-in-basic">
-                <p className="sign-up-description"></p>
-                <input
-                  className="form-input"
-                  placeholder="Email Address"
-                  name="email"
-                  type="email"
-                  required
-                ></input>
-                <input
-                  className="form-input"
-                  placeholder="Phone Number"
-                  name="phone"
-                  required
-                ></input>
-                <input
-                  className="form-input"
-                  placeholder="Password"
-                  name="password"
-                  required
-                ></input>
-                <input
-                  className="form-input"
-                  placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                ></input>
-                <p
-                  className="password-error"
-                  style={{ display: passwordError ? "block" : "none" }}
-                >
-                  The Passwords Do Not Match
-                </p>
-                <p
-                  className="redirect-sign-up"
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    navigate(`/signup/hr`);
-                  }}
-                  style={{ opacity }}
-                >
-                  Not a Mentor or a Business? Sign up as an Employee
-                </p>
-                <input
-                  type="submit"
-                  value="Sign Up"
-                  onClick={handleSubmit}
-                ></input>
-              </section>
+              <section className="sign-in-basic"></section>
             </section>
           </form>
         </section>
@@ -249,7 +202,7 @@ const tempData = {
     form: {
       title: "Human Resource Sign Up",
       description:
-        "Join Bank of America's HR team and make a impact. You'll promote a positive work environment, manage employee relations and oversee HR programs. As an employee, you'll have the ability to add valuable resources. Be part of shaping Bank of America's future success.",
+        "Join Bank of America's HR team and make a impact. You'll promote a positive work environment, manage employee relations and oversee HR programs.",
       formTag1: "Full Name",
       formTag2: "Employee ID",
       formTag3: "Description",
