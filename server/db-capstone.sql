@@ -9,7 +9,6 @@ CREATE TABLE `Capstone`.`businesses` (
 	`id` INT NOT NULL AUTO_INCREMENT, -- pk
     `business_name` VARCHAR(100) NOT NULL,
     `user_id` INT NOT NULL, -- fk
-    `type_id` INT NOT NULL, -- fk
     `description` VARCHAR(200) NOT NULL,
     `location` VARCHAR(100) NULL,
 	`owner_fullname` VARCHAR(100) NOT NULL,
@@ -20,7 +19,6 @@ CREATE TABLE `Capstone`.`businesses` (
     
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`),
-    FOREIGN KEY (`type_id`) REFERENCES `organization_types`(`id`),
     FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)
 );
 
@@ -69,13 +67,6 @@ CREATE TABLE `Capstone`.`employees` (
     
     PRIMARY KEY (`id`),
     FOREIGN KEY (`user_id`) REFERENCES `user_logins`(`user_id`)
-);
-
-CREATE TABLE `Capstone`.`organization_types` (
-	`id` INT NOT NULL AUTO_INCREMENT, -- pk
-    `name` VARCHAR(100) NOT NULL,
-    
-    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Capstone`.`interests` (
