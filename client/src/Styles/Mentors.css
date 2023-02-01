@@ -1,0 +1,29 @@
+.Mentors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Mentors input {
+    width: 2
+    00px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 100%));
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.mentor-outer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mentor-outer-container img {
+    margin: 20px;
+    max-width: 100px;
+    border-radius: 50%;
+}

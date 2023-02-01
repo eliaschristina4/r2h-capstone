@@ -11,10 +11,10 @@ app.use(cors());
 // app.use(express.static("../client/src"));
 
 const con = mysql.createConnection({
-  host: "cap.cluster-c7bfdyjkoqls.us-east-2.rds.amazonaws.com",
-  user: "root",
-  password: "dummypassword",
-  database: "Capstone",
+      host: "capstone.cuie3sewt5xi.us-east-2.rds.amazonaws.com",
+      user: "root",
+      password: "dummypassword",
+      database: "Capstone"
 });
 
 con.connect(function (err: any) {
@@ -27,7 +27,7 @@ app.get( "/", ( req: any, res: any ) => {
   res.send( "Hello world!" );
 } );
 
-// MENTORS
+// OLD QUERY – mentors table as-is in MySQL
 app.get('/mentors', (req: any, res: any) => {
   con.query("SELECT * FROM `Capstone`.`mentors`;", (err: any, results: any, fields: any) => {
     if(err) throw err;
@@ -35,7 +35,15 @@ app.get('/mentors', (req: any, res: any) => {
     // console.log(results);
   })
 })
-// copy basic structure for resources, businesses, etc.
+
+// JOIN query on mentors and interests table
+app.get('/mentor-interests', (req: any, res: any) => {
+  con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.location, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", (err: any, results: any, fields: any) => {
+    if(err) throw err;
+    res.send(results);
+    // console.log(results);
+  })
+})
 
 app.listen(5000, () => {
   console.log(`Server is running on port ${port}.`)

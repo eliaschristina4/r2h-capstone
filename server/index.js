@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 // app.use(express.static("../client/src"));
 var con = mysql.createConnection({
-    host: "cap.cluster-c7bfdyjkoqls.us-east-2.rds.amazonaws.com",
+    host: "capstone.cuie3sewt5xi.us-east-2.rds.amazonaws.com",
     user: "root",
     password: "dummypassword",
     database: "Capstone"
@@ -22,7 +22,7 @@ con.connect(function (err) {
 app.get("/", function (req, res) {
     res.send("Hello world!");
 });
-// MENTORS
+// OLD QUERY – mentors table as-is in MySQL
 app.get('/mentors', function (req, res) {
     con.query("SELECT * FROM `Capstone`.`mentors`;", function (err, results, fields) {
         if (err)
@@ -31,7 +31,15 @@ app.get('/mentors', function (req, res) {
         // console.log(results);
     });
 });
-// copy basic structure for resources, businesses, etc.
+// JOIN query on mentors and interests table
+app.get('/mentor-interests', function (req, res) {
+    con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.location, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", function (err, results, fields) {
+        if (err)
+            throw err;
+        res.send(results);
+        // console.log(results);
+    });
+});
 app.listen(5000, function () {
     console.log("Server is running on port ".concat(port, "."));
 });
