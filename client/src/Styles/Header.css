@@ -32,6 +32,7 @@ nav {
 .Header nav ul, .Header nav div ul {
     align-items: center;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -47,7 +48,7 @@ header a {
     text-decoration: none;
 }
 
-a li {
+nav a li {
     padding-right: 50px;
     color: rgb(41, 68, 129) 
 }
@@ -60,6 +61,10 @@ a li {
     display: none;
 }
 
+#drop-down-ul {
+    display: none;
+}
+
 /* menu toggle */
 
 
@@ -67,7 +72,7 @@ a li {
 
     header {
         margin: 30px auto 0 auto;
-        padding: 0 auto;
+        padding: 0;
         display: flex;
         flex-direction: column;
     }
@@ -76,10 +81,12 @@ a li {
         width: 350px;
     }
 
-    nav {
+    .Header nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0;
+        padding: 0 50px; 
     }
 
     #static-ul {
@@ -87,15 +94,26 @@ a li {
     }
 
     #drop-down-ul {
+        display: flex;
         flex-direction: column;
         margin-top: 20px;
-        color: rgb(41, 68, 129); 
+        /* color: rgb(41, 68, 129);  */
+        color: white;
+        width: 100%;
+        background-color: rgb(41, 68, 129);
+        padding: 20px 50px;
+        margin: 0;
+    }
+
+    #drop-down-ul li {
+        color: white;
+        padding: 10px;
     }
 
     .showing {
         display: block;
         flex-direction: column;
-        margin-top: 20px;
+        /* margin-top: 20px; */
         color: rgb(41, 68, 129); 
     }
 
@@ -139,13 +157,19 @@ a li {
 
 
     @media screen and (max-width: 465px) { 
-        .Header {
-            padding: 20px;
+        .Header * {
+            /* padding: 20px; */
         }
         #header-logo {
             width: 90%;
+            padding: 20px;
         }
-    
+        .Header nav {
+            padding: 20px;
+        }
+        #drop-down-ul {
+            padding: 10px;
+        }
     }
 
 }
