@@ -1,0 +1,151 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+main {
+  display: flex;
+}
+.form-section {
+  width: 100%;
+}
+.sign-up-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 83vh;
+}
+.sign-up-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 65vh;
+}
+
+.sign-up-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 7%;
+}
+.sign-up-interests {
+  margin-left: 7%;
+  width: 50%;
+}
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-right: 10%;
+}
+.icon-section img {
+  width: 600px;
+  margin-right: 7%;
+}
+
+.redirect-sign-up {
+  font-family: Roboto;
+  color: rgb(41, 68, 129);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.redirect-sign-up:hover {
+  color: rgb(227, 24, 55);
+}
+
+.sign-up-title {
+  display: flex;
+  color: rgb(227, 24, 55);
+  font-size: 550%;
+  font-weight: bold;
+  margin: 0;
+  padding: 40px 0 30px 0;
+  width: 80%;
+}
+
+.sign-up-description {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 10px 0 45px 0;
+  width: 65%;
+}
+
+.group .form-input {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(41, 68, 129);
+  margin: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 8px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  border: 4.5px solid rgb(41, 68, 129);
+  margin: 25px 0 20px 10px;
+  height: 40px;
+  width: 55%;
+  padding: 0 0 0 10px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+hr {
+  margin: 50px 10px;
+  border: 1px solid #ccc;
+}
+.group {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.form-interest {
+  height: 40px;
+  width: 40px;
+  /* border: 2px solid rgb(41, 68, 129);
+    border-radius: 5px; */
+}
+
+/* .form-interest:hover{
+    background-color: rgb(41, 68, 129);
+} */
+
+textarea.form-input {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  width: 55%;
+  border-radius: 8px;
+  padding: 5px 0 0 10px;
+  resize: none;
+  margin-top: 45px;
+  font-size: 16px;
+}
+
+input.btn {
+  background-color: rgb(227, 24, 55);
+  color: white;
+  border: solid rgb(227, 24, 55);
+  margin: 5px 0 5px 5px;
+  width: 350px;
+  height: 40px;
+}
+
+.divider {
+  width: 85%;
+  margin: 0 7% 100px 7%;
+  background-color: grey;
+  opacity: 30%;
+  height: 3px;
+}
+
+.sign-in-basic {
+  width: 50%;
+  margin-top: 280px;
+}

@@ -63,12 +63,12 @@ export const Form = (formData: SignUpFormData) => {
         name={processInput(formData.formTag2)}
         required
       ></input>
-      <input
+      <textarea
         className="form-input"
         placeholder={formData.formTag3}
         name={processInput(formData.formTag3)}
         required
-      ></input>
+      ></textarea>
     </>
   );
 };

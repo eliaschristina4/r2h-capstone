@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 const con = mysql.createConnection({
-  host: "cap.cluster-c7bfdyjkoqls.us-east-2.rds.amazonaws.com",
+  host: "capstone.cuie3sewt5xi.us-east-2.rds.amazonaws.com",
   user: "root",
   password: "dummypassword",
   database: "Capstone",
