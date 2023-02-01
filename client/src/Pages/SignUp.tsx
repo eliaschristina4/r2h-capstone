@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { SignUpFormData } from "../Components/Sign Up/Form"
 
 // Components
 import { Footer } from "../Components/Footer";
@@ -39,6 +40,7 @@ interface SignUpI {
 }
 
 export const SignUp = () => {
+  const navigate = useNavigate();
   const [signUpForm, setSignUpForm] = useState<SignUpI>({
     form: {
       title: "",
@@ -59,7 +61,20 @@ export const SignUp = () => {
     },
   });
 
-  const [roles, setRoles] = useState([]);
+  const [roles, setRoles] = useState<string[]>([]);
+
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<boolean>(false);
+
+  const [opacity, setOpacity] = useState(1);
+
+  const handleChange = (role: string) => {
+    if (roles.includes(role)) {
+      setRoles(roles.filter((i) => i !== role));
+    } else {
+      setRoles([...roles, role]);
+    }
+  };
 
   const parameters: string | undefined = useParams().user;
 
@@ -67,17 +82,26 @@ export const SignUp = () => {
     e.preventDefault();
     const formData = new FormData(e.target.form);
     const data = Object.fromEntries(formData.entries());
-    console.log({ ...data, roles: roles });
+    if (data.password !== confirmPassword) {
+      console.error("Passwords do not match");
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+      console.log({ ...data, interests: roles });
+    }
   };
 
   useEffect(() => {
     if (parameters === "business") {
       setSignUpForm(tempData.business);
+      setOpacity(1);
     } else if (parameters === "mentor") {
       setSignUpForm(tempData.mentor);
+      setOpacity(1);
     } else if (parameters === "hr") {
+      setOpacity(0);
+
       setSignUpForm(tempData.hr);
-    } else {
     }
   }, [parameters]);
 
@@ -88,10 +112,22 @@ export const SignUp = () => {
         <section className="form-section">
           <form onSubmit={handleSubmit}>
             {/* Top Section */}
-            <Form {...signUpForm.form} />
+            <Form formData={SignUpFormData} {...signUpForm.form} />
+
+            <hr />
 
             {/* Middle Section */}
-            <InterestsRoles {...signUpForm.roles} />
+            <InterestsRoles
+              rolesData={signUpForm.roles}
+              handleChange={handleChange}
+            />
+
+            <InterestsRoles rolesData={undefined} handleChange={function (role: string): void {
+              throw new Error("Function not implemented.");
+            } } {...signUpForm.roles} />
+            
+            <hr />
+
 
             {/* Bottom Section */}
             <p className="sign-up-title">Sign Up Information</p>
@@ -100,26 +136,45 @@ export const SignUp = () => {
               className="form-input"
               placeholder="Email Address"
               name="email"
+              type="email"
+              required
             ></input>
             <input
               className="form-input"
               placeholder="Phone Number"
               name="phone"
+              required
             ></input>
             <input
               className="form-input"
               placeholder="Password"
               name="password"
+              required
             ></input>
             <input
               className="form-input"
               placeholder="Confirm Password"
-              name="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
             ></input>
 
+            <p
+              className="password-error"
+              style={{ display: passwordError ? "block" : "none" }}
+            >
+            </p>
             <input type="submit" value="Sign Up" onClick={handleSubmit}></input>
+
+
+            <input className="btn" type="submit" value="Sign Up" onClick={handleSubmit}></input>
+
           </form>
-          <p className="redirect-sign-up">
+          <p
+            className="redirect-sign-up"
+            onClick={() => navigate(`/signup/hr`)}
+            style={{ opacity }}
+          >
             Not a Mentor or a Business? Sign up as an Employee
           </p>
         </section>

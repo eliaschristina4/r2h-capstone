@@ -1,0 +1,38 @@
+* {
+    font-family: ‘Roboto’, sans-serif;
+    /* overflow: hidden;  */
+}
+.redirect-sign-up{
+    color: rgb(41, 68, 129);
+    cursor: pointer;
+}
+.sign-up-title{
+    margin-bottom: -5px;
+    color: rgb(227, 24, 55);
+    font-size: xx-large;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(41, 68, 129);
+    margin: 10px;
+    height: 25px;
+    width: 220px;
+    border-radius: 8px;
+}
+.group{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.form-interest{
+    border: solid rgb(227, 24, 55);
+}
+.btn{
+    background-color: rgb(227, 24, 55);
+    color: white;
+    border: solid rgb(227, 24, 55);
+    margin: 10px;
+    width: 125px;
+    height: 25px;
+}
