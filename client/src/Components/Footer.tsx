@@ -15,11 +15,11 @@ export default function Footer(){
             </nav>
 
             <div className='socials-container'>
-                <img src={require('../Images/Footer/facebook-icon.png')} alt="facebook logo" />
-                <img src={require('../Images/Footer/instagram-icon.png')} alt="instagram logo" />
-                <img src={require('../Images/Footer/linkedin-icon.png')} alt="linkedin logo" />
-                <img src={require('../Images/Footer/twitter-icon.png')} alt="twitter logo" />
-                <img src={require('../Images/Footer/youtube-icon.png')} alt="youtube logo" />
+            <a href='https://www.facebook.com' ><img src={require('../Images/Footer/facebook-icon.png')} alt="facebook logo" /></a>
+            <a href='https://www.instagram.com' ><img src={require('../Images/Footer/instagram-icon.png')} alt="instagram logo" /></a>
+            <a href='https://www.linkedin.com' ><img src={require('../Images/Footer/linkedin-icon.png')} alt="linkedin logo" /></a>
+            <a href='https://www.twitter.com' ><img src={require('../Images/Footer/twitter-icon.png')} alt="twitter logo" /></a>
+            <a href='https://www.youtube.com' ><img src={require('../Images/Footer/youtube-icon.png')} alt="youtube logo" /></a>
             </div>
 
             <div className='fdic-copyright-container'>

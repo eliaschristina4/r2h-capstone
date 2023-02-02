@@ -1,9 +1,34 @@
-.Mentors {
-    display: flex;
-    flex-direction: column;
+/* 
+RED: rgb(227, 24, 55)
+BLUE: rgb(41, 68, 129) 
+*/
+
+.Mentors{
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: black;
+    margin-bottom: 100px;
+}
+
+.Mentors h1 {
+    text-align: center;
+}
+
+#page-description {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+.radio-btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px auto 50px auto;
 }
 
 .Mentors input[type=radio] {
@@ -16,8 +41,12 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 100%));
-    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0, 600px)); /* auto-fill? */
+    /* grid-template-rows: repeat(auto-fill, minmax(0, 200px)); */
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: center;
+    margin: 50px auto 0 auto;
 }
 
 .mentor-outer-container {
@@ -26,8 +55,75 @@
     align-items: center;
 }
 
-.mentor-outer-container img {
+.mentor-pfp {
     margin: 20px;
     max-width: 100px;
     border-radius: 50%;
+    border: 3px solid rgb(41, 68, 129);
+}
+
+.mentor-text-container h3 {
+    color: rgb(41, 68, 129);
+    margin: 0 0 15px 0;
+}
+
+.mentor-text-container ol {
+    margin: 0;
+    list-style: none;
+    list-style-type: none;
+    padding: 0 0 0 20px;
+}
+
+#profession {
+    font-size: .90em;
+    color:black;
+    font-weight: bolder;
+}
+
+.bottom-li {
+    margin-bottom: 30px;
+    font-size: .90em;
+    color: rgb(227, 24, 55);
+    font-weight: bolder;
+}
+
+#mentor-btn {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(41, 68, 129);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.Mentor a #mentor-btn:visited {
+    text-decoration: none;
+    color: white;
+}
+
+ #mentor-btn:hover {
+    background-color: rgb(227, 24, 55);
+}
+
+@media screen and (max-width: 700px) {
+    #page-description {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .mentor-outer-container {
+        flex-direction: column;
+    }
+    .mentor-pfp {
+        max-width: 80px;
+    }
+    .mentor-text-container {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .radio-btn-container {
+        flex-direction: column;
+        padding-left: 35%;
+    }
 }

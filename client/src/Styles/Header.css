@@ -57,16 +57,15 @@ nav a li {
     width: 50px;
 }
 
-#container {
+#mobile-menu-container {
     display: none;
 }
 
-#drop-down-ul {
+.drop-down-container {
     display: none;
 }
 
 /* menu toggle */
-
 
 @media screen and (max-width: 865px) {
 
@@ -78,7 +77,8 @@ nav a li {
     }
 
     #header-logo {
-        width: 350px;
+        width: 300px;
+        margin-bottom: 30px;
     }
 
     .Header nav {
@@ -93,37 +93,10 @@ nav a li {
         display: none
     }
 
-    #drop-down-ul {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-        /* color: rgb(41, 68, 129);  */
-        color: white;
-        width: 100%;
-        background-color: rgb(41, 68, 129);
-        padding: 20px 50px;
-        margin: 0;
-    }
-
-    #drop-down-ul li {
-        color: white;
-        padding: 10px;
-    }
-
-    .showing {
-        display: block;
-        flex-direction: column;
-        /* margin-top: 20px; */
-        color: rgb(41, 68, 129); 
-    }
-
-    .hidden {
-        display: none;
-    }
 
     /* hamburger menu */
 
-    #container {
+    #mobile-menu-container {
         display: flex;
         flex-direction: column;
         justify-content:center;
@@ -154,6 +127,34 @@ nav a li {
         transform: translate(0, -11px) rotate(45deg);
     }
 
+    #hidden {
+        display: none;
+    }
+
+    #showing {
+        display: block;
+        margin-top: 20px;
+        color: rgb(41, 68, 129); 
+        
+    } 
+
+    #drop-down-ul {
+        display: block;
+        /* display: flex;
+        flex-direction: column; */
+        margin-top: 20px;
+        /* color: rgb(41, 68, 129);  */
+        color: white;
+        /* width: 100%; */
+        background-color: rgb(41, 68, 129);
+        padding: 20px 0 20px 50px;
+        margin: 0;
+    }
+    
+    #drop-down-ul li {
+        color: white;
+        padding: 10px 0 10px 10px;
+    }
 
 
     @media screen and (max-width: 465px) { 

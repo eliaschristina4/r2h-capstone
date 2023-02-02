@@ -4,13 +4,13 @@ export default function Home () {
   return (
     <div className='Home'>
       <main>
+        <div className='hero-img'>
+          <img src={require('../Images/Homepage/hand-holding-coin.png')} alt='hand holding dollar sign' />
+        </div>
         <div className='hero-text'>
           <h1>Empowering Small Businesses</h1>
           <p>At Bank of America, we provide small businesses with the resources and support they need to succeed, from funding option to expert advice.</p>
           <a target='_blank' href='#'>Explore Resources</a>
-        </div>
-        <div className='hero-img'>
-          <img src={require('../Images/Homepage/hand-holding-coin.png')} alt='hand holding dollar sign' />
         </div>
       </main>
 
@@ -40,8 +40,8 @@ export default function Home () {
         <div className='maximize-potential'>
           <img src={require('../Images/Homepage/opportunities-icon.png')} alt='light-bulb icon' className='explore-icons' />
           <h3>Maximize Your Small Business Potential</h3>
-          <p>Our program is designed to provide access to resources, networking events, mentorship, programs, and more for small business owners.</p>
-          <a target='_blank' href='#'>Explore Our Program</a>
+          <p>Our programs are designed to provide access to resources, networking events, mentorship, programs, and more for small business owners.</p>
+          <a target='_blank' href='#'>Explore Programs</a>
         </div>
       </section>
 

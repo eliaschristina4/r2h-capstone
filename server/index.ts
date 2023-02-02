@@ -37,8 +37,9 @@ app.get('/mentors', (req: any, res: any) => {
 })
 
 // JOIN query on mentors and interests table
+// removed mentors.location because i think it got deleted from the mentors table in the rds somehow? and that's messing up the get/fetch requests :/
 app.get('/mentor-interests', (req: any, res: any) => {
-  con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.location, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", (err: any, results: any, fields: any) => {
+  con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", (err: any, results: any, fields: any) => {
     if(err) throw err;
     res.send(results);
     // console.log(results);

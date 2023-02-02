@@ -1,6 +1,6 @@
 /* 
-RED: rgb (227, 24, 55)
-BLUE: rgb (41, 68, 129) 
+RED: rgb(227, 24, 55)
+BLUE: rgb(41, 68, 129) 
 */
 
 body {
@@ -24,17 +24,18 @@ body {
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 100px;
 }
 
 .hero-text {
-    padding-left: 50px;
+    padding-right: 50px;
+    width: 500px;
 }
 
-h1 {
+.hero-text h1 {
     color: rgb(227, 24, 55);
     font-size: 3em;
 }
@@ -69,7 +70,11 @@ h1 {
     margin: 50px auto;
 }
 
-h3 {
+.explore-container img {
+    width: 50px;
+}
+
+.explore-container h3 {
     font-size: 1.5em;
 }
 
@@ -87,6 +92,17 @@ h3 {
 .explore-container li {
     font-size: 0.75em;
     padding: 20px;
+}
+
+.explore-container a {
+    width:min-content;
+    font-size: .8em;
+}
+
+.explore-container a:hover {
+    font-weight: bolder;
+    background-color: white;
+    color: rgb(227, 24, 55);
 }
 
 .financial-assistance, .fund-growth, .maximize-potential {
@@ -152,6 +168,12 @@ h3 {
 
 .bottom-text a {
     background-color: rgb(41, 68, 129) ;
+    font-weight: bolder;
+}
+
+.bottom-text a:hover {
+    background-color: white;
+    color: rgb(41, 68, 129);
 }
 
 @media screen and (min-width: 1625px) {
@@ -160,15 +182,21 @@ h3 {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 70%;
+        width: 60%;
         
     }
 
 }
 
+@media screen and (max-width: 1000px) {
+    .explore-container a {
+        padding: 10px 20px
+    }
+}
+
 @media screen and (max-width: 920px) {
 
-    h1 {
+    .hero-text h1 {
         font-size: 2.5em;
     }
 
@@ -178,6 +206,11 @@ h3 {
         margin: 50px auto;
     }
 
+    .explore-container a {
+        font-size: .7em;
+        padding: 10px 20px
+    }
+
     .bottom-text h2 {
         font-size: 2.25em;
     }
@@ -185,29 +218,31 @@ h3 {
 }
 
 @media screen and (max-width: 820px) {
+    main {
+        flex-direction: column;
+        margin: 0 auto
+    }
+
     .hero-text {
-        grid-column-start: 0;
+        /* grid-column-start: 0;
         grid-column-end: 1;
         grid-row-start: 1;
-        grid-row-end: 2;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        grid-row-end: 2; */
+        width: 100%;
         text-align: center;
         padding: 0;
+        margin: 0;
     }
 
     .hero-text p {
-        margin-bottom: 40px;
+        margin: 0 auto 40px auto;
     }
 
     .hero-img {
-        grid-column-start: 0;
+        /* grid-column-start: 0;
         grid-column-end: 1;
         grid-row-start: 0;
-        grid-row-end: 1;
+        grid-row-end: 1; */
     }
 
     .explore-container {
@@ -217,6 +252,11 @@ h3 {
         width: 100%;
         margin: 40px auto;
         padding: 0;
+    }
+
+    .explore-container a {
+        font-size: 1em;
+        padding: 15px 30px;
     }
 
     .financial-assistance, .fund-growth, .maximize-potential {

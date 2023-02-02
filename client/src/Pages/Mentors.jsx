@@ -61,24 +61,32 @@ export default function App () {
     <div className='Mentors'>
 
       <h1>Meet Our Mentors</h1>
-      <p>Our volunteers come from a variety of sectors and backgrounds, and bring a wealth of experience they are willing to share with small businesses and startups. Browse possible future mentors below by their field of interest. </p>
+      <p id='page-description'>Our volunteers come from a variety of sectors and backgrounds, and bring a wealth of experience they are willing to share with small businesses and startups. Browse possible future mentors below by their field of interest. </p>
 
       {/* RADIO BUTTONS: onChange triggers the handleChange function above */}
       <div className='radio-btn-container'>
-        <input type="radio" id='all' value='' onChange={handleChange} name='interest' /> 
-          <label htmlFor='all'>All</label>
-        <input type="radio" id='technology' value='technology' onChange={handleChange} name='interest' /> 
-          <label htmlFor='technology'>Technology</label>
-        <input type="radio" id='education' value='education' onChange={handleChange} name='interest' /> 
-          <label htmlFor='education'>Education</label>
-        <input type="radio" id='retail' value='retail' onChange={handleChange} name='interest' /> 
-          <label htmlFor='retail'>Retail</label>  
-        <input type="radio" id='restaurant' value='restaurant' onChange={handleChange} name='interest' /> 
-          <label htmlFor='restaurant'>Restaurant</label> 
-        <input type="radio" id='logistics' value='logistics' onChange={handleChange} name='interest' /> 
-          <label htmlFor='logistics'>Logistics</label>  
-        <input type="radio" id='health' value='health' onChange={handleChange} name='interest' /> 
-          <label htmlFor='health'>Health</label> 
+        <div> {/* another set of divs around each input/label pair to help on smaller screens with keep btn and label together on same line*/}
+          <input type="radio" id='all' value='' onChange={handleChange} name='interest' /> 
+            <label htmlFor='all'>All</label>
+            </div><div>
+          <input type="radio" id='technology' value='technology' onChange={handleChange} name='interest' /> 
+            <label htmlFor='technology'>Technology</label>
+            </div><div>
+          <input type="radio" id='education' value='education' onChange={handleChange} name='interest' /> 
+            <label htmlFor='education'>Education</label>
+            </div><div>
+          <input type="radio" id='retail' value='retail' onChange={handleChange} name='interest' /> 
+            <label htmlFor='retail'>Retail</label>  
+            </div><div>
+          <input type="radio" id='restaurant' value='restaurant' onChange={handleChange} name='interest' /> 
+            <label htmlFor='restaurant'>Restaurant</label> 
+            </div><div>
+          <input type="radio" id='logistics' value='logistics' onChange={handleChange} name='interest' /> 
+            <label htmlFor='logistics'>Logistics</label>  
+            </div><div>
+          <input type="radio" id='health' value='health' onChange={handleChange} name='interest' /> 
+            <label htmlFor='health'>Health</label> 
+            </div>
       </div>
 
 
@@ -90,13 +98,17 @@ export default function App () {
             <div className='mentor-text-container'>
               <h3>{mentor.fullname} </h3>
               <ol>
-                <li>Profession: {mentor.profession}</li>
-                <li>Description: {mentor.description}</li>
-                <li>Email address: {mentor.email}</li>
+                <li id='profession'>PROFESSION: {mentor.profession.toUpperCase()}</li>
+                <br></br>
+                <li>{mentor.description}</li>
+                <br></br>
+                {/* <li>Website: {mentor.website}</li> */}
                   {/* the .charAt().toUpperCase() on mentor.interest below makes it so the interest doesn't render in all lower case, since that's how it is in the db. should probably add this to all the imported data? */}
-                <li>Area of interest: {mentor.interest.charAt(0).toUpperCase() + mentor.interest.slice(1)}</li>
+                <li className='bottom-li'>AREA OF INTEREST: {mentor.interest.toUpperCase()}</li>
+                {/* {mentor.interest.charAt(0).toUpperCase() + mentor.interest.slice(1)} */}
                   {/* ^^^ may change this to just mentor.interest.toUpperCase() depending on styling ^^^ */}
               </ol>
+              <a target="_blank" href="#" id="mentor-btn">Connect with {mentor.fullname}</a>
             </div> 
           </div>
         ))}

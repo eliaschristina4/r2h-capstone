@@ -4,19 +4,21 @@ import { useState } from 'react'
 export default function Header(){
 
     // state variable for function below – mobile hamburger menu
-    const [ menuClass, setMenuClass ] = useState('')
-    const [ listClass, setListClass ] = useState('hidden')
+    const [ menuClass, setMenuID ] = useState('')
+    const [ listClass, setListID ] = useState('hidden')
 
     // this function handles click event for mobile hamburger menu – drop down
     const menuClickHandler = () => {
         if (menuClass === '') {
-            setMenuClass('changed');
-            setListClass('showing')
-            console.log('the menu icon should be an x and the options should show')
+            setMenuID('changed');
+            setListID('showing')
+             
+            // console.log('the menu icon should be an x and the options should show')
         } else {
-            setMenuClass('')
-            setListClass('hidden')
-            console.log('the menu should be a hamburger and the options should be hidden')
+            setMenuID('')
+            setListID('hidden')
+             
+            // console.log('the menu should be a hamburger and the options should be hidden')
         }
     }
 
@@ -28,7 +30,7 @@ export default function Header(){
             
             <nav>
                 {/* hamburger menu / nav links that only appear on smaller screens */}
-                <div id="container" className={menuClass} onClick={menuClickHandler}>
+                <div id="mobile-menu-container" className={menuClass} onClick={menuClickHandler}>
                         <div className="bar1"></div>
                         <div className="bar2"></div>
                         <div className="bar3"></div>
@@ -36,9 +38,9 @@ export default function Header(){
 
                 {/* large screen nav links */}
                 <ul id='static-ul'>
+                    <a href='/'><li>Home</li></a>
                     <a href='/resources'><li>Resources</li></a>
                     <a href='/mentors'><li>Mentors</li></a>
-                    <a href='/'><li>Home</li></a>
                 </ul>
 
                 <section className='icon-container'>
@@ -46,11 +48,14 @@ export default function Header(){
                     <img src={require('../Images/Header/profile-icon.png')} alt='profile icon'/>
                 </section>
             </nav>
-            <ul className={listClass} id='drop-down-ul' >
-                            <a href='/resources'><li>Resources</li></a>
-                            <a href='/mentors'><li>Mentor</li></a>
-                            <a href='/'><li>Home</li></a>
-                        </ul>
+
+            <div className='drop-down-container' id={listClass} > {/* drop down menu that is hidden until toggled */}
+                <ul id='drop-down-ul' >
+                    <a href='/'><li>Home</li></a>
+                    <a href='/resources'><li>Resources</li></a>
+                    <a href='/mentors'><li>Mentor</li></a>
+                </ul>
+            </div>
             
         </header>
         
