@@ -31,9 +31,25 @@ app.get('/mentors', function (req, res) {
         // console.log(results);
     });
 });
+app.get('/resources', function (req, res) {
+    con.query("SELECT * FROM `Capstone`.`resources`;", function (err, results, fields) {
+        if (err)
+            throw err;
+        res.send(results);
+        // console.log(results);
+    });
+});
 // JOIN query on mentors and interests table
 app.get('/mentor-interests', function (req, res) {
-    con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.location, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", function (err, results, fields) {
+    con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", function (err, results, fields) {
+        if (err)
+            throw err;
+        res.send(results);
+        // console.log(results);
+    });
+});
+app.get('/resource', function (req, res) {
+    con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", function (err, results, fields) {
         if (err)
             throw err;
         res.send(results);

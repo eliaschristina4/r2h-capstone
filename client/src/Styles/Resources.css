@@ -1,0 +1,78 @@
+.Mentors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.Mentors input[type=radio] {
+    margin-right: 5px;
+}
+
+.Mentors label {
+    margin-right: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 100%));
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.mentor-outer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mentor-outer-container img {
+    margin: 20px;
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+/* .btns {
+    background-color: rgb(41, 68, 129);
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .btns:hover {
+    background-color: rgb(228, 24, 55);
+  }
+  
+  .btns.selected {
+    background-color:rgb(228, 24, 55);
+  }
+   */
+
+   .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .btns {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btns:hover {
+    background-color: #ddd;
+  }
+  
+  .btns:active {
+    transform: scale(0.95);
+  }
+  

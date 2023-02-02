@@ -36,9 +36,25 @@ app.get('/mentors', (req: any, res: any) => {
   })
 })
 
+app.get('/resources', (req: any, res: any) => {
+  con.query("SELECT * FROM `Capstone`.`resources`;", (err: any, results: any, fields: any) => {
+    if(err) throw err;
+    res.send(results);
+    // console.log(results);
+  })
+})
+
 // JOIN query on mentors and interests table
 app.get('/mentor-interests', (req: any, res: any) => {
-  con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.location, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", (err: any, results: any, fields: any) => {
+  con.query("SELECT mentors.fullname, mentors.profession, mentors.user_id, mentors.description, mentors.contact_email AS email, mentors.contact_phone AS phone, mentors.website, interests.name AS interest FROM mentors JOIN interests ON mentors.interest_id = interests.id", (err: any, results: any, fields: any) => {
+    if(err) throw err;
+    res.send(results);
+    // console.log(results);
+  })
+})
+
+app.get('/resource', (req: any, res: any) => {
+  con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
     if(err) throw err;
     res.send(results);
     // console.log(results);
