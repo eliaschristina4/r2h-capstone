@@ -1,5 +1,6 @@
 import '../Styles/Header.css';
 import { useState } from 'react'
+import Login from '../Components/Login';
 
 export default function Header(){
 
@@ -21,6 +22,8 @@ export default function Header(){
             // console.log('the menu should be a hamburger and the options should be hidden')
         }
     }
+
+    // const toggleLogin = () => setShowLogin(!showLogin)
 
     return (
         <header className='Header'>
@@ -45,7 +48,8 @@ export default function Header(){
 
                 <section className='icon-container'>
                     <img src={require('../Images/Header/search-icon.png')} alt='search icon' />
-                    <img src={require('../Images/Header/profile-icon.png')} alt='profile icon'/>
+                    <img src={require('../Images/Header/profile-icon.png')} alt='profile icon' />
+                        {/* this is gonna go in the img profile icon tag: onClick={() => setShowLogin(!showLogin)} */}
                 </section>
             </nav>
 
@@ -61,3 +65,10 @@ export default function Header(){
         
     );
 }
+
+{/* {showLogin && (
+                <section>
+                    <Login /> */}
+                        {/* <button className='close' onClick={toggleLogin}>Close</button> */}
+                {/* </section>
+            )} */}

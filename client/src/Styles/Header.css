@@ -1,6 +1,6 @@
 /* 
-RED: rgb (227, 24, 55)
-BLUE: rgb (41, 68, 129) 
+RED: rgb(227, 24, 55)
+BLUE: rgb(41, 68, 129) 
 */
 
 body {
@@ -44,13 +44,18 @@ ul {
 }
 
 
-header a {
+#static-ul a {
     text-decoration: none;
 }
 
-nav a li {
+#static-ul a li {
     padding-right: 50px;
     color: rgb(41, 68, 129) 
+}
+
+nav a li:hover {
+    padding-right: 50px;
+    color: rgb(227, 24, 55);
 }
 
 .icon-container img {
@@ -154,6 +159,10 @@ nav a li {
     #drop-down-ul li {
         color: white;
         padding: 10px 0 10px 10px;
+    }
+
+    #drop-down-ul li:hover {
+        color: rgb(227, 24, 55);
     }
 
 
