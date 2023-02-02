@@ -63,30 +63,15 @@ export default function App () {
       <h1>Meet Our Mentors</h1>
       <p id='page-description'>Our volunteers come from a variety of sectors and backgrounds, and bring a wealth of experience they are willing to share with small businesses and startups. Browse possible future mentors below by their field of interest. </p>
 
-      {/* RADIO BUTTONS: onChange triggers the handleChange function above */}
-      <div className='radio-btn-container'>
-        <div> {/* another set of divs around each input/label pair to help on smaller screens with keep btn and label together on same line*/}
-          <input type="radio" id='all' value='' onChange={handleChange} name='interest' /> 
-            <label htmlFor='all'>All</label>
-            </div><div>
-          <input type="radio" id='technology' value='technology' onChange={handleChange} name='interest' /> 
-            <label htmlFor='technology'>Technology</label>
-            </div><div>
-          <input type="radio" id='education' value='education' onChange={handleChange} name='interest' /> 
-            <label htmlFor='education'>Education</label>
-            </div><div>
-          <input type="radio" id='retail' value='retail' onChange={handleChange} name='interest' /> 
-            <label htmlFor='retail'>Retail</label>  
-            </div><div>
-          <input type="radio" id='restaurant' value='restaurant' onChange={handleChange} name='interest' /> 
-            <label htmlFor='restaurant'>Restaurant</label> 
-            </div><div>
-          <input type="radio" id='logistics' value='logistics' onChange={handleChange} name='interest' /> 
-            <label htmlFor='logistics'>Logistics</label>  
-            </div><div>
-          <input type="radio" id='health' value='health' onChange={handleChange} name='interest' /> 
-            <label htmlFor='health'>Health</label> 
-            </div>
+      {/* FILTER BUTTONS: onChange triggers the handleChange function above */}
+      <div className='btn-container'>
+        <button className={filterTerm === '*' ? 'active' : ''} id='all' value='*' onClick={() => setFilterTerm('')}>All</button>
+        <button className={filterTerm === 'technology' ? 'active' : ""} id='technology' value='technology' onClick={() => setFilterTerm('technology')}>Technology</button>
+        <button className={filterTerm === 'education' ? 'active' : ""} id='education' value='education' onClick={() => setFilterTerm('education')}>Education</button>
+        <button className={filterTerm === 'retail' ? 'active' : ""} id='retail' value='retail' onClick={() => setFilterTerm('retail')}>Retail</button>
+        <button className={filterTerm === 'restaurant' ? 'active' : ""} id='restaurant' value='restaurant' onClick={() => setFilterTerm('restaurant')}>Restaurant</button>
+        <button className={filterTerm === 'logistics' ? 'active' : ""} id='logistics' value='logistics' onClick={() => setFilterTerm('logistics')}>Logistics</button>
+        <button className={filterTerm === 'health' ? 'active' : ""} id='health' value='health' onClick={() => setFilterTerm('health')}>Health</button>
       </div>
 
 
@@ -106,7 +91,6 @@ export default function App () {
                   {/* the .charAt().toUpperCase() on mentor.interest below makes it so the interest doesn't render in all lower case, since that's how it is in the db. should probably add this to all the imported data? */}
                 <li className='bottom-li'>AREA OF INTEREST: {mentor.interest.toUpperCase()}</li>
                 {/* {mentor.interest.charAt(0).toUpperCase() + mentor.interest.slice(1)} */}
-                  {/* ^^^ may change this to just mentor.interest.toUpperCase() depending on styling ^^^ */}
               </ol>
               <a target="_blank" href="#" id="mentor-btn">Connect with {mentor.fullname}</a>
             </div> 
@@ -119,7 +103,30 @@ export default function App () {
   );
 };
 
-
+// RADIO BTNS
+{/* <div>  */}
+          {/* another set of divs around each input/label pair to help on smaller screens with keep btn and label together on same line*/}
+          {/* <input type="radio" id='all' value='' onChange={handleChange} name='interest' /> 
+            <label htmlFor='all'>All</label>
+            </div><div>
+          <input type="radio" id='technology' value='technology' onChange={handleChange} name='interest' /> 
+            <label htmlFor='technology'>Technology</label>
+            </div><div>
+          <input type="radio" id='education' value='education' onChange={handleChange} name='interest' /> 
+            <label htmlFor='education'>Education</label>
+            </div><div>
+          <input type="radio" id='retail' value='retail' onChange={handleChange} name='interest' /> 
+            <label htmlFor='retail'>Retail</label>  
+            </div><div>
+          <input type="radio" id='restaurant' value='restaurant' onChange={handleChange} name='interest' /> 
+            <label htmlFor='restaurant'>Restaurant</label> 
+            </div><div>
+          <input type="radio" id='logistics' value='logistics' onChange={handleChange} name='interest' /> 
+            <label htmlFor='logistics'>Logistics</label>  
+            </div><div>
+          <input type="radio" id='health' value='health' onChange={handleChange} name='interest' /> 
+            <label htmlFor='health'>Health</label> 
+            </div> */}
 
 
 // ATTEMPT 2

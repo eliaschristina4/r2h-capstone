@@ -27,6 +27,41 @@ app.get( "/", ( req: any, res: any ) => {
   res.send( "Hello world!" );
 } );
 
+// Grab log-in information from 
+app.post('/login', (req:any , res:any) => {
+  const login_email = req.body;
+  console.log(login_email)
+  con.query('SELECT * FROM mentors WHERE user_logins = ?', [login_email], (error:any, results:any) => {
+    if (error) {
+      return res.send(error);
+    } else {
+      if (results.length > 0) {
+        res.send('Login successful');
+      } else {
+        res.send('Login failed');
+      }
+    }
+  });
+});
+
+// basic resources get req -- all data from resources table
+app.get('/resources', (req: any, res: any) => {
+  con.query("SELECT * FROM `Capstone`.`resources`;", (err: any, results: any, fields: any) => {
+    if(err) throw err;
+    res.send(results);
+    // console.log(results);
+  })
+})
+
+// JOIN query on resources and interests table
+app.get('/resource', (req: any, res: any) => {
+  con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
+    if(err) throw err;
+    res.send(results);
+    // console.log(results);
+  })
+})
+
 // OLD QUERY – mentors table as-is in MySQL
 app.get('/mentors', (req: any, res: any) => {
   con.query("SELECT * FROM `Capstone`.`mentors`;", (err: any, results: any, fields: any) => {

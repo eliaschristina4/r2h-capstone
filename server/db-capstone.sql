@@ -1,6 +1,6 @@
 /* CREATING DB */
 
-CREATE DATABASE Capstone;
+-- CREATE DATABASE Capstone;
 USE Capstone;
 
 /* CREATING TABLES */ 
@@ -89,6 +89,8 @@ CREATE TABLE `Capstone`.`resources` (
   PRIMARY KEY (`id`),
   FOREIGN KEY (`interest_id`) REFERENCES `Capstone`.`interests`(`id`)-- fk
 );
+
+select * from resources;
 
 -- DUMMY DATA FOR RESOURCES (RAY)
 INSERT INTO `resources`(`title`,`description`, `monetary_value`, `interest_id`)

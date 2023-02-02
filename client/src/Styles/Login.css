@@ -1,0 +1,44 @@
+.div-login {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    border: 1px solid #dbdbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.boa-logo {
+    width: 50px;
+    align-self: left;
+}
+
+input {
+    width: 95%;
+    border: 1px solid #dbdbdbdb;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 5px;
+    background-color: #fafafafa;
+    box-sizing: none;
+}
+
+button{
+    width: 100%;
+    margin: 5px 0;
+    background-color: dodgerblue;
+    padding: 5px;
+}
+
+.close{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 100px;
+    position: relative;
+}

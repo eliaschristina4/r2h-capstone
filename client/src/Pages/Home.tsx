@@ -10,7 +10,7 @@ export default function Home () {
         <div className='hero-text'>
           <h1>Empowering Small Businesses</h1>
           <p>At Bank of America, we provide small businesses with the resources and support they need to succeed, from funding option to expert advice.</p>
-          <a target='_blank' href='#'>Explore Resources</a>
+          <a href='/resources' id='hero-btn'>Explore Resources</a>
         </div>
       </main>
 
@@ -24,7 +24,7 @@ export default function Home () {
             <li>Access to education resources and training programs that will help you develop skills and knowledge for a successful business</li>
           </ul>
 
-          <a target='_blank' href='#' id='explore-btn'>Explore Scholarships</a>
+          <a href='#' id='explore-btn'>Explore Scholarships</a>
         </div>
 
         <div className='fund-growth'>
@@ -34,14 +34,14 @@ export default function Home () {
           <ul>
             <li>Opportunities to connect with industry experts and additional resources to help take your business to the next level</li>
           </ul>
-          <a target='_blank' href='#'>Explore Grants</a>
+          <a href='#'>Explore Grants</a>
         </div>
 
         <div className='maximize-potential'>
           <img src={require('../Images/Homepage/opportunities-icon.png')} alt='light-bulb icon' className='explore-icons' />
           <h3>Maximize Your Small Business Potential</h3>
           <p>Our programs are designed to provide access to resources, networking events, mentorship, programs, and more for small business owners.</p>
-          <a target='_blank' href='#'>Explore Programs</a>
+          <a href='#'>Explore Programs</a>
         </div>
       </section>
 
@@ -53,7 +53,7 @@ export default function Home () {
         <div className='bottom-text'>
           <h2>Investing In The Future Of Small Businesses</h2>
           <p>We believe in the power of small businesses to drive economic growth. From finding options to expert advice and mentorship, we're committed to providing the resources and support small business owners need to succeed.</p>
-          <a target='_blank' href='#'>Learn More</a>
+          <a href='#'>Learn More</a>
         </div>
       </section>
     </div>

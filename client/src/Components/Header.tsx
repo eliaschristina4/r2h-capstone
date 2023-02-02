@@ -1,8 +1,12 @@
 import '../Styles/Header.css';
 import { useState } from 'react'
-import Login from '../Components/Login';
+// import Login from '../Components/Login';
 
 export default function Header(){
+
+    // state variable for login function just below 
+    // const [ showLogin, setShowLogin ] = useState(false)
+    // const toggleLogin = () => setShowLogin(!showLogin)
 
     // state variable for function below – mobile hamburger menu
     const [ menuClass, setMenuID ] = useState('')
@@ -23,9 +27,8 @@ export default function Header(){
         }
     }
 
-    // const toggleLogin = () => setShowLogin(!showLogin)
-
     return (
+        <>
         <header className='Header'>
 
             <img src={require('../Images/Header/BOFA-logo-colored.png')} alt='bank of america logo' id='header-logo' />
@@ -48,8 +51,8 @@ export default function Header(){
 
                 <section className='icon-container'>
                     <img src={require('../Images/Header/search-icon.png')} alt='search icon' />
-                    <img src={require('../Images/Header/profile-icon.png')} alt='profile icon' />
-                        {/* this is gonna go in the img profile icon tag: onClick={() => setShowLogin(!showLogin)} */}
+                    <a href='/login' id='login-link'><img src={require('../Images/Header/profile-icon.png')} alt='profile icon'  /></a>
+                    {/* onClick={() => setShowLogin(!showLogin)} */}
                 </section>
             </nav>
 
@@ -62,13 +65,16 @@ export default function Header(){
             </div>
             
         </header>
+
         
+
+        </>
     );
 }
 
-{/* {showLogin && (
-                <section>
-                    <Login /> */}
-                        {/* <button className='close' onClick={toggleLogin}>Close</button> */}
-                {/* </section>
-            )} */}
+// {showLogin && (
+//     <section>
+//       <Login />
+//       <button className='close' onClick={toggleLogin}>Close</button>
+//       </section> 
+//   )}

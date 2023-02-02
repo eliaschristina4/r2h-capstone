@@ -60,6 +60,10 @@ main {
     object-fit: contain;
 }
 
+#hero-btn:hover {
+    background-color: rgb(41, 68, 129) ;
+}
+
 /* middle section */
 
 .explore-container {

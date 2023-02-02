@@ -2,8 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Components
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+// import Footer from "../Components/Footer";
+// import Header from "../Components/Header";
 import { Form } from "../Components/SignUp/Form";
 import { InterestsRoles } from "../Components/SignUp/InterestsRoles";
 

@@ -1,17 +1,14 @@
-// import React from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Page & Component Imports
 import Header from '../src/Components/Header';
 import Footer from '../src/Components/Footer';
-// import Home from '../src/Pages/Home';
-// import Mentors from '../src/Pages/Mentors';
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
-
-// Pages
 import Home from "./Pages/Home";
 import Mentors from "./Pages/Mentors";
 import SignUp from "./Pages/SignUp";
-// import Resources from "./Pages/Resources";
+import Resources from "./Pages/Resources";
+import Login from "./Components/Login";
 
 function App() {
 
@@ -24,7 +21,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='signup/:user' element={<SignUp />} />
           <Route path='/mentors' element={<Mentors />} />
-          {/* <Route path='/resources' element={<Resources />} /> */}
+          <Route path='/resources' element={<Resources />} />
+          <Route path='/login' element={<Login />}></Route>
         </Routes>
       </Router>
 
