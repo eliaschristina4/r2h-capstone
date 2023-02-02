@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import axios from "axios"
 // Components
 import { Footer } from "../Components/Footer";
 import { Header } from "../Components/Header";
@@ -90,7 +90,8 @@ export const SignUp = () => {
       setPasswordError(true);
     } else {
       setPasswordError(false);
-      console.log({ ...data, interests: roles });
+      const formData = ({ ...data, interests: roles });
+      axios.post(`http://localhost:5000/signup/${parameters}`, formData);
     }
   };
 
