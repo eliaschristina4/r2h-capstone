@@ -49,10 +49,11 @@ app.get('/mentor-interests', function (req, res) {
     });
 });
 app.get('/resource', function (req, res) {
-    con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", function (err, results, fields) {
+    con.query("SELECT resources.description, resources.title, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", function (err, results, fields) {
         if (err)
             throw err;
-        res.send(results);
+        var x = results.sort(function () { return Math.random() - 0.5; });
+        res.send(x);
         // console.log(results);
     });
 });

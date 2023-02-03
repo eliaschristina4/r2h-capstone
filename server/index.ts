@@ -54,9 +54,10 @@ app.get('/mentor-interests', (req: any, res: any) => {
 })
 
 app.get('/resource', (req: any, res: any) => {
-  con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
+  con.query("SELECT resources.description, resources.title, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
     if(err) throw err;
-    res.send(results);
+    const x = results.sort(() => Math.random()- 0.5)
+    res.send(x);
     // console.log(results);
   })
 })

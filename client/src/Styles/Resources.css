@@ -1,64 +1,41 @@
-.Mentors {
-    display: flex;
-    flex-direction: column;
+/*
+RED: rgb(227, 24, 55)
+BLUE: rgb(41, 68, 129)
+*/
+
+.Resources{
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: black;
+    margin-bottom: 100px;
 }
 
-.Mentors input[type=radio] {
-    margin-right: 5px;
+.Resources h1 {
+    text-align: center;
+    color: rgb(227, 24, 55);
+    font-weight: bolder;
+    font-size: 3em;
 }
 
-.Mentors label {
-    margin-right: 30px;
+/* p tag text */
+.intro{
+    font-size: 1rem;
+    padding: 0 100px 0 100px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 100%));
-    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
-}
 
-.mentor-outer-container {
+/* FILTER BUTTONS */
+.btn-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
 }
 
-.mentor-outer-container img {
-    margin: 20px;
-    max-width: 100px;
-    border-radius: 50%;
-}
-
-/* .btns {
+.btn-container button {
     background-color: rgb(41, 68, 129);
     color: white;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  .btns:hover {
-    background-color: rgb(228, 24, 55);
-  }
-  
-  .btns.selected {
-    background-color:rgb(228, 24, 55);
-  }
-   */
-
-   .btn-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-  }
-  
-  .btns {
-    background-color: #eee;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px 20px;
@@ -66,13 +43,48 @@
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease-in-out;
+}
+
+.btn-container button:hover {
+    background-color: rgb(227, 24, 55);
+}
+
+.btn-container button.selected {
+    background-color: rgb(227, 24, 55);
+    transform: scale(1);
+}
+
+.r-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 35px auto;
   }
   
-  .btns:hover {
-    background-color: #ddd;
-  }
-  
-  .btns:active {
-    transform: scale(0.95);
-  }
-  
+.grid-img{
+    display: flex;
+    align-self: center;
+}
+
+.resource-outer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.r-grid-container h3{
+    font-size: 2rem;
+}
+
+.r-grid-container ol {
+    font-size: larger;
+}
+
+@media screen and (max-width: 768px) {
+    .btn-container button {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+}
