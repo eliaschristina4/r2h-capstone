@@ -3,6 +3,8 @@ RED: rgb(227, 24, 55)
 BLUE: rgb(41, 68, 129) 
 */
 
+/* GENERAL STYLES */
+
 body {
     padding: 0;
     margin: 0;
@@ -22,6 +24,8 @@ body {
     text-decoration: none;
     color: white;
 }
+
+/* MAIN/HERO SECTION */
 
 main {
     display: flex;
@@ -64,7 +68,7 @@ main {
     background-color: rgb(41, 68, 129) ;
 }
 
-/* middle section */
+/* MIDDLE SECTION */
 
 .explore-container {
     display: flex;
@@ -135,7 +139,7 @@ main {
     margin-bottom: 50px;
 }
 
-/* bottom section */
+/* BOTTOM */
 
 .investing-container {
     background: rgb(227, 24, 55);
@@ -179,6 +183,8 @@ main {
     background-color: white;
     color: rgb(41, 68, 129);
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 1625px) {
 

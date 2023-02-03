@@ -12,6 +12,8 @@ BLUE: rgb(41, 68, 129)
     margin-bottom: 100px;
 }
 
+/* top page text -- page intro */
+
 .Mentors h1 {
     text-align: center;
     color: rgb(227, 24, 55);
@@ -26,6 +28,8 @@ BLUE: rgb(41, 68, 129)
     font-size: 1em;
 }
 
+/* FILTER BUTTONS */
+
 /* .btn-container {
     display: flex;
     flex-direction: row;
@@ -33,12 +37,6 @@ BLUE: rgb(41, 68, 129)
     justify-content: center;
     margin: 60px auto 50px auto;
 } */
-
-/* .Mentors input[type=radio] {
-    margin-right: 5px;
-} */
-
-/* FILTER BUTTONS */
 
 .btn-container {
     display: flex;
@@ -72,6 +70,8 @@ BLUE: rgb(41, 68, 129)
     margin-right: 30px;
 } */
 
+/* GRID */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0, 600px)); /* auto-fill? */
@@ -81,6 +81,8 @@ BLUE: rgb(41, 68, 129)
     justify-content: center;
     margin: 50px auto 0 auto;
 }
+
+/* INDIVIDUAL MENTOR ENTRIES */
 
 .mentor-outer-container {
     display: flex;
@@ -136,6 +138,8 @@ BLUE: rgb(41, 68, 129)
  #mentor-btn:hover {
     background-color: rgb(227, 24, 55);
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 700px) {
     #page-description {

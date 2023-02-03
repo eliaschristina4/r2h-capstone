@@ -1,9 +1,13 @@
+// IMPORTS
 import { useEffect, useState } from 'react';
+
+// CSS
 import '../Styles/Mentors.css';
 
+// IMAGES
 const image = require(`../Images/silhouette-pfp.png`);
 
-export default function App () {
+export default function Mentors () {
   // used to store all the data, the filtered data, and the term used to filter the data
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -74,8 +78,9 @@ export default function App () {
         <button className={filterTerm === 'health' ? 'active' : ""} id='health' value='health' onClick={() => setFilterTerm('health')}>Health</button>
       </div>
 
-
+      {/* container that holds all the imported mentor data and sets them in a grid */}
       <div className='grid-container'>
+        
         {/* taking the filtered data, mapping through it, and plugging into the template below */}
         {filteredData.map(mentor => (
           <div className='mentor-outer-container' key={mentor.user_id}>

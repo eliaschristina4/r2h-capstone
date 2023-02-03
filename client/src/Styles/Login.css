@@ -1,6 +1,6 @@
 .div-login {
     width: 300px;
-    height: 400px;
+    height: 460px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -34,11 +34,9 @@ button{
     padding: 5px;
 }
 
-.close{
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    width: 100px;
-    position: relative;
-}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }

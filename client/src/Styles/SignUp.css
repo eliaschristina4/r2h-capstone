@@ -1,9 +1,213 @@
 * {
-    font-family: "Roboto", sans-serif;
-  }
-  main {
-    display: flex;
-  }
+  font-family: "Roboto", sans-serif;
+}
+main {
+  display: flex;
+}
+.form-section {
+  width: 100%;
+}
+.sign-up-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 83vh;
+}
+.sign-up-bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.sign-up-bottom-section .sign-up-title,
+.sign-up-bottom-section .sign-up-description {
+  width: 50%;
+}
+
+.sign-up-form-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.sign-up-information {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.sign-up-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 7%;
+}
+.sign-up-interests {
+  width: 90%;
+  margin-left: 7%;
+}
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-right: 10%;
+}
+.icon-section img {
+  width: 650px;
+  margin-right: 7%;
+}
+
+.redirect-sign-up {
+  color: rgb(41, 68, 129);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 30px 0 0px 10px;
+}
+
+.redirect-sign-up:hover {
+  color: rgb(227, 24, 55);
+}
+
+.sign-up-title {
+  display: flex;
+  color: rgb(227, 24, 55);
+  font-size: 525%;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 0 30px 0;
+  width: 80%;
+}
+
+.sign-up-description {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 10px 0 45px 0;
+  width: 65%;
+}
+
+.group .form-input {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(41, 68, 129);
+  margin: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 8px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  border: 4.5px solid rgb(41, 68, 129);
+  margin: 25px 0 20px 0px;
+  height: 40px;
+  width: 55%;
+  padding: 0 0 0 10px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+hr {
+  margin: 50px 10px;
+  border: 1px solid #ccc;
+}
+.group {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 30px 10px 0;
+  align-items: center;
+}
+
+.form-interest {
+  height: 40px;
+  width: 40px;
+  /* border: 2px solid rgb(41, 68, 129);
+    border-radius: 5px; */
+}
+
+/* .form-interest:hover{
+    background-color: rgb(41, 68, 129);
+} */
+
+textarea.form-input {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 55%;
+  border-radius: 8px;
+  padding: 5px 0 0 10px;
+  resize: none;
+  margin-top: 45px;
+  font-size: 16px;
+}
+
+input.btn {
+  background-color: rgb(227, 24, 55);
+  color: white;
+  border: solid rgb(227, 24, 55);
+  margin: 5px 0 5px 5px;
+  width: 350px;
+  height: 40px;
+}
+
+.divider {
+  width: 85%;
+  margin: 75px 7% 75px 7%;
+  background-color: grey;
+  opacity: 30%;
+  height: 3px;
+}
+
+.interest-section {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+  margin-bottom: 30px;
+}
+
+.sign-up-btn {
+  height: 45px;
+  width: 200px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  border-style: none;
+  background-color: rgb(227, 24, 55);
+  color: white;
+  font: bold;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.sign-up-btn:hover {
+  background-color: rgb(41, 68, 129);
+  font-size: 19px;
+}
+
+.sign-up-form-details .divider-interest {
+  width: 58%;
+  background-color: grey;
+  opacity: 30%;
+  height: 3px;
+  margin: 30px 0;
+}
+.sign-up-form-details .redirect-sign-up {
+  margin: -10px 0 30px 0;
+}
+
+.sign-up-information .form-input {
+  width: 65%;
+}
+.password-error {
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: -15px;
+  color: red;
+}
+@media (min-width: 1100px) and (max-width: 1500px) {
   .form-section {
     width: 100%;
   }
@@ -25,7 +229,7 @@
   .sign-up-bottom-section .sign-up-description {
     width: 50%;
   }
-  
+
   .sign-up-form-details {
     display: flex;
     flex-direction: column;
@@ -37,7 +241,7 @@
     flex-direction: column;
     width: 50%;
   }
-  
+
   .sign-up-details {
     display: flex;
     flex-direction: column;
@@ -56,10 +260,10 @@
     margin-right: 10%;
   }
   .icon-section img {
-    width: 650px;
+    width: 500px;
     margin-right: 7%;
   }
-  
+
   .redirect-sign-up {
     color: rgb(41, 68, 129);
     cursor: pointer;
@@ -67,28 +271,28 @@
     font-weight: bold;
     margin: 30px 0 0px 10px;
   }
-  
+
   .redirect-sign-up:hover {
     color: rgb(227, 24, 55);
   }
-  
+
   .sign-up-title {
     display: flex;
     color: rgb(227, 24, 55);
-    font-size: 525%;
+    font-size: 475%;
     font-weight: bold;
     margin: 0;
     padding: 10px 0 30px 0;
     width: 80%;
   }
-  
+
   .sign-up-description {
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0 45px 0;
     width: 65%;
   }
-  
+
   .group .form-input {
     display: flex;
     flex-direction: column;
@@ -98,19 +302,19 @@
     width: 35px;
     border-radius: 8px;
   }
-  
+
   .form-input {
     display: flex;
     flex-direction: column;
     border: 4.5px solid rgb(41, 68, 129);
     margin: 25px 0 20px 0px;
     height: 40px;
-    width: 55%;
+    width: 60%;
     padding: 0 0 0 10px;
     border-radius: 8px;
     font-size: 16px;
   }
-  
+
   hr {
     margin: 50px 10px;
     border: 1px solid #ccc;
@@ -121,30 +325,30 @@
     margin: 10px 30px 10px 0;
     align-items: center;
   }
-  
+
   .form-interest {
     height: 40px;
     width: 40px;
     /* border: 2px solid rgb(41, 68, 129);
-      border-radius: 5px; */
+    border-radius: 5px; */
   }
-  
+
   /* .form-interest:hover{
-      background-color: rgb(41, 68, 129);
-  } */
-  
+    background-color: rgb(41, 68, 129);
+} */
+
   textarea.form-input {
     display: flex;
     flex-direction: column;
     height: 150px;
-    width: 55%;
+    width: 60%;
     border-radius: 8px;
     padding: 5px 0 0 10px;
     resize: none;
     margin-top: 45px;
     font-size: 16px;
   }
-  
+
   input.btn {
     background-color: rgb(227, 24, 55);
     color: white;
@@ -153,7 +357,7 @@
     width: 350px;
     height: 40px;
   }
-  
+
   .divider {
     width: 85%;
     margin: 75px 7% 75px 7%;
@@ -161,14 +365,14 @@
     opacity: 30%;
     height: 3px;
   }
-  
+
   .interest-section {
     display: flex;
     justify-content: space-between;
     width: 35%;
     margin-bottom: 30px;
   }
-  
+
   .sign-up-btn {
     height: 45px;
     width: 200px;
@@ -181,12 +385,12 @@
     font-size: 17px;
     border-radius: 5px;
   }
-  
+
   .sign-up-btn:hover {
     background-color: rgb(41, 68, 129);
     font-size: 19px;
   }
-  
+
   .sign-up-form-details .divider-interest {
     width: 58%;
     background-color: grey;
@@ -197,7 +401,7 @@
   .sign-up-form-details .redirect-sign-up {
     margin: -10px 0 30px 0;
   }
-  
+
   .sign-up-information .form-input {
     width: 65%;
   }
@@ -207,3 +411,423 @@
     margin-top: -15px;
     color: red;
   }
+}
+@media (min-width: 800px) and (max-width: 1100px) {
+  .form-section {
+    width: 100%;
+  }
+  .sign-up-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 83vh;
+  }
+  .sign-up-bottom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+  .sign-up-bottom-section .sign-up-title,
+  .sign-up-bottom-section .sign-up-description {
+    width: 100%;
+  }
+
+  .sign-up-form-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .sign-up-information {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .sign-up-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 7%;
+  }
+  .sign-up-interests {
+    width: 90%;
+    margin-left: 7%;
+  }
+  .icon-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-right: 10%;
+  }
+  .icon-section img {
+    width: 400px;
+    margin-right: 7%;
+  }
+
+  .redirect-sign-up {
+    color: rgb(41, 68, 129);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 30px 0 0px 10px;
+  }
+
+  .redirect-sign-up:hover {
+    color: rgb(227, 24, 55);
+  }
+
+  .sign-up-title {
+    display: flex;
+    color: rgb(227, 24, 55);
+    font-size: 475%;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0 30px 0;
+    width: 80%;
+  }
+
+  .sign-up-description {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0 45px 0;
+    width: 65%;
+  }
+
+  .group .form-input {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgb(41, 68, 129);
+    margin: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 8px;
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    border: 4.5px solid rgb(41, 68, 129);
+    margin: 25px 0 20px 0px;
+    height: 40px;
+    width: 60%;
+    padding: 0 0 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  hr {
+    margin: 50px 10px;
+    border: 1px solid #ccc;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 30px 10px 0;
+    align-items: center;
+  }
+
+  .form-interest {
+    height: 40px;
+    width: 40px;
+    /* border: 2px solid rgb(41, 68, 129);
+    border-radius: 5px; */
+  }
+
+  /* .form-interest:hover{
+    background-color: rgb(41, 68, 129);
+} */
+
+  textarea.form-input {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 60%;
+    border-radius: 8px;
+    padding: 5px 0 0 10px;
+    resize: none;
+    margin-top: 45px;
+    font-size: 16px;
+  }
+
+  input.btn {
+    background-color: rgb(227, 24, 55);
+    color: white;
+    border: solid rgb(227, 24, 55);
+    margin: 5px 0 5px 5px;
+    width: 350px;
+    height: 40px;
+  }
+
+  .divider {
+    width: 85%;
+    margin: 75px 7% 75px 7%;
+    background-color: grey;
+    opacity: 30%;
+    height: 3px;
+  }
+
+  .interest-section {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-bottom: 30px;
+  }
+
+  .sign-up-btn {
+    height: 45px;
+    width: 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    border-style: none;
+    background-color: rgb(227, 24, 55);
+    color: white;
+    font: bold;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+
+  .sign-up-btn:hover {
+    background-color: rgb(41, 68, 129);
+    font-size: 19px;
+  }
+
+  .sign-up-form-details .divider-interest {
+    width: 58%;
+    background-color: grey;
+    opacity: 30%;
+    height: 3px;
+    margin: 30px 0;
+  }
+  .sign-up-form-details .redirect-sign-up {
+    margin: -10px 0 30px 0;
+  }
+
+  .sign-up-information .form-input {
+    width: 65%;
+  }
+  .password-error {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: -15px;
+    color: red;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 800px) {
+  .form-section {
+    width: 100%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .sign-up-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 83vh;
+  }
+  .sign-up-bottom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+  }
+  .sign-up-bottom-section .sign-up-title,
+  .sign-up-bottom-section .sign-up-description {
+    width: 100%;
+  }
+
+  .sign-up-form-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .sign-up-information {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sign-up-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 7%;
+  }
+  .sign-up-interests {
+    width: 90%;
+    margin-left: 7%;
+  }
+  .icon-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-right: 10%;
+  }
+  .icon-section img {
+    width: 400px;
+    margin-right: 7%;
+  }
+
+  .redirect-sign-up {
+    color: rgb(41, 68, 129);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0 0 -30px;
+  }
+
+  .redirect-sign-up:hover {
+    color: rgb(227, 24, 55);
+  }
+
+  .sign-up-title {
+    display: flex;
+    color: rgb(227, 24, 55);
+    font-size: 475%;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0 30px 0;
+    width: 90%;
+    text-align: center;
+  }
+
+  .sign-up-description {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0 45px 0;
+    width: 90%;
+  }
+
+  .group .form-input {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgb(41, 68, 129);
+    margin: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 8px;
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    border: 4.5px solid rgb(41, 68, 129);
+    margin: 25px 0 20px 0px;
+    height: 40px;
+    width: 85%;
+    padding: 0 0 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  hr {
+    margin: 50px 10px;
+    border: 1px solid #ccc;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 30px 10px 0;
+    align-items: center;
+  }
+
+  .form-interest {
+    height: 40px;
+    width: 40px;
+    /* border: 2px solid rgb(41, 68, 129);
+    border-radius: 5px; */
+  }
+
+  /* .form-interest:hover{
+    background-color: rgb(41, 68, 129);
+} */
+
+  textarea.form-input {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 85%;
+    border-radius: 8px;
+    padding: 5px 0 0 10px;
+    resize: none;
+    margin-top: 45px;
+    font-size: 16px;
+  }
+
+  input.btn {
+    background-color: rgb(227, 24, 55);
+    color: white;
+    border: solid rgb(227, 24, 55);
+    margin: 5px 0 5px 5px;
+    width: 350px;
+    height: 40px;
+  }
+
+  .divider {
+    width: 85%;
+    margin: 75px 7% 75px 7%;
+    background-color: grey;
+    opacity: 30%;
+    height: 3px;
+  }
+
+  .interest-section {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .sign-up-btn {
+    height: 45px;
+    width: 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    border-style: none;
+    background-color: rgb(227, 24, 55);
+    color: white;
+    font: bold;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+
+  .sign-up-btn:hover {
+    background-color: rgb(41, 68, 129);
+    font-size: 19px;
+  }
+
+  .sign-up-form-details .divider-interest {
+    width: 58%;
+    background-color: grey;
+    opacity: 30%;
+    height: 3px;
+    margin: 30px 0;
+  }
+  .sign-up-form-details .redirect-sign-up {
+    margin: -10px 0 30px 0;
+  }
+
+  .sign-up-information .form-input {
+    width: 88%;
+  }
+  .password-error {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: -15px;
+    color: red;
+  }
+}

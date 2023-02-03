@@ -21,6 +21,8 @@ header {
     align-self: center;
 }
 
+/* NAV LINKS */
+
 nav {
     margin: 0;
     padding: 0;
@@ -62,6 +64,8 @@ ul {
     width: 50px;
 }
 
+/* HIDING MOBILE MENU OPTIONS WHEN SCREEN LARGER THAN TABLET */
+
 #mobile-menu-container {
     display: none;
 }
@@ -70,7 +74,7 @@ ul {
     display: none;
 }
 
-/* menu toggle */
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 865px) {
 
@@ -98,8 +102,7 @@ ul {
         display: none
     }
 
-
-    /* hamburger menu */
+    /* MEDU ICON AND TOGGLE */
 
     #mobile-menu-container {
         display: flex;
@@ -107,7 +110,7 @@ ul {
         justify-content:center;
         cursor: pointer;
     }
-  
+
     .bar1, .bar2, .bar3 {
         width: 35px;
         height: 5px;
@@ -116,9 +119,9 @@ ul {
         transition: 0.4s;
     }
 
-    .changed {
+    /* .changed {
         
-    }
+    } */
     
     .changed .bar1 {
         transform: translate(0, 11px) rotate(-45deg);
@@ -165,6 +168,7 @@ ul {
         color: rgb(227, 24, 55);
     }
 
+    /* MEDIA QUERIES */
 
     @media screen and (max-width: 465px) { 
         .Header * {

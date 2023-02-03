@@ -1,8 +1,11 @@
+// CSS
 import '../Styles/Home.css';
 
 export default function Home () {
   return (
     <div className='Home'>
+
+      {/* MAIN/HERO SECTION AT TOP */}
       <main>
         <div className='hero-img'>
           <img src={require('../Images/Homepage/hand-holding-coin.png')} alt='hand holding dollar sign' />
@@ -14,6 +17,7 @@ export default function Home () {
         </div>
       </main>
 
+      {/* MIDDLE SECTION - THREE BOXES */}
       <section className='explore-container'>
         <div className='financial-assistance'>
           <img src={require('../Images/Homepage/scholarship-icon.png')} alt='dollar sign icon' className='explore-icons' />
@@ -45,6 +49,7 @@ export default function Home () {
         </div>
       </section>
 
+      {/* BOTTOM SECTION */}
       <section className='investing-container'>
         <div className='bottom-img'>
           <img src={require('../Images/Homepage/hand-shaking.png')} alt='hands shaking'/>

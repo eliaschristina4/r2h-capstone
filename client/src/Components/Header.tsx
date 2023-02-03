@@ -1,6 +1,9 @@
-import '../Styles/Header.css';
-import { useState } from 'react'
+// IMPORTS
 // import Login from '../Components/Login';
+import { useState } from 'react'
+
+// CSS
+import '../Styles/Header.css';
 
 export default function Header(){
 
@@ -31,11 +34,12 @@ export default function Header(){
         <>
         <header className='Header'>
 
+            {/* BOA LOGO */}
             <img src={require('../Images/Header/BOFA-logo-colored.png')} alt='bank of america logo' id='header-logo' />
            
             
             <nav>
-                {/* hamburger menu / nav links that only appear on smaller screens */}
+                {/* hamburger menu that only appear on smaller screens */}
                 <div id="mobile-menu-container" className={menuClass} onClick={menuClickHandler}>
                         <div className="bar1"></div>
                         <div className="bar2"></div>
@@ -49,6 +53,7 @@ export default function Header(){
                     <a href='/mentors'><li>Mentors</li></a>
                 </ul>
 
+                {/* search and login icons */}
                 <section className='icon-container'>
                     <img src={require('../Images/Header/search-icon.png')} alt='search icon' />
                     <a href='/login' id='login-link'><img src={require('../Images/Header/profile-icon.png')} alt='profile icon'  /></a>
@@ -56,7 +61,8 @@ export default function Header(){
                 </section>
             </nav>
 
-            <div className='drop-down-container' id={listClass} > {/* drop down menu that is hidden until toggled */}
+            {/* drop down menu that is hidden until toggled on tablet and mobile screen sizes */}
+            <div className='drop-down-container' id={listClass} > 
                 <ul id='drop-down-ul' >
                     <a href='/'><li>Home</li></a>
                     <a href='/resources'><li>Resources</li></a>

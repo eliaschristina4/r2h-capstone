@@ -110,6 +110,7 @@ const SignUp = () => {
 
   return (
     <section>
+      {/* <Header /> */}
       <main>
         <section className="form-section">
           <form onSubmit={handleSubmit}>
@@ -151,11 +152,10 @@ const SignUp = () => {
           </form>
         </section>
       </main>
+      {/* <Footer /> */}
     </section>
   );
 };
-
-export default SignUp;
 
 const tempData = {
   business: {
@@ -219,3 +219,5 @@ const tempData = {
     },
   },
 };
+
+export default SignUp;

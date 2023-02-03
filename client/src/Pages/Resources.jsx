@@ -1,7 +1,9 @@
+// IMPORTS
 import { useEffect, useState } from 'react';
+
+// CSS
 import '../Styles/Resources.css';
 
-// const image = require(`../Images/silhouette-pfp.png`);
 
 export default function App () {
   // used to store all the data, the filtered data, and the term used to filter the data

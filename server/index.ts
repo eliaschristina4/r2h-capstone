@@ -2,14 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
 const app = express();
+const axios = require("axios");
 
 const port = 5000;
 
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(cors());
-// app.use(express.static("../client/src"));
 
+// setting the mysql db connection details to be used to initiate the connection below
 const con = mysql.createConnection({
       host: "capstone.cuie3sewt5xi.us-east-2.rds.amazonaws.com",
       user: "root",
@@ -17,32 +18,90 @@ const con = mysql.createConnection({
       database: "Capstone"
 });
 
+// actually connecting to mysql rds using the credentials specified above
 con.connect(function (err: any) {
   if (err) throw err;
   console.log("MySQL Database Connected!");
 });
 
-// TEST
+// TEST ROUTE
 app.get( "/", ( req: any, res: any ) => {
   res.send( "Hello world!" );
 } );
 
-// Grab log-in information from 
-app.post('/login', (req:any , res:any) => {
-  const login_email = req.body;
-  console.log(login_email)
-  con.query('SELECT * FROM mentors WHERE user_logins = ?', [login_email], (error:any, results:any) => {
+/* LOGIN PORTAL */
+
+// Grab log-in information from mysql db
+app.post('/login', (req: any, res: any) => {
+  const data = req.body;
+  console.log(data);
+  con.query('SELECT * FROM user_logins WHERE login_email = ?', [data.login_email], (error: any, results: any) => {
     if (error) {
-      return res.send(error);
-    } else {
-      if (results.length > 0) {
+      console.error(error);
+      return res.status(500).send("Server error");
+    }
+    if (!results.length) {
+      return res.status(400).send("Username and/or Password not found");
+    }
+    con.query('SELECT * FROM user_logins WHERE login_password = ?', [data.login_password], (error: any, results: any) => {
+      if (error) {
+        console.error(error);
+        return res.status(500).send("Server error");
+      }
+      if (!results.length) {
+        return res.status(400).send("Username and/or Password not found");
+      }
+      const z = results[0];
+      console.log(z.login_password);
+      if (z.login_password === data.login_password) {
         res.send('Login successful');
       } else {
         res.send('Login failed');
       }
-    }
+    });
   });
 });
+
+
+/* SIGN UP PORTALS */
+
+// mentor signup queries
+app.post("/signup/mentor", (req: any, res: any) => {
+ 
+  const data = req.body
+   con.query(`INSERT INTO user_logins (role_id, login_email, login_password, date_created)
+   VALUES (4, "${data.email}", "${data.password}", 2023-03-02);`)
+
+  con.query(`INSERT INTO mentors (fullname, profession, description, contact_email, contact_phone, interest_id, user_id)
+  VALUES ("${data.fullName}", "${data.profession}", "${data.description}", "${data.email}", "${data.phone}", 1, 27);`)
+});
+
+// business signup queries
+app.post("/signup/business", (req: any, res: any) => {
+  console.log(req.body);
+  
+  const data = req.body
+  //console.log(data["ownerFull Name"])
+   con.query(`INSERT INTO user_logins (role_id, login_email, login_password, date_created)
+   VALUES (3, "${data.email}", "${data.password}", 2023-03-02);`)
+
+  con.query(`INSERT INTO businesses (business_name, description, owner_fullname, email, phone, interest_id, user_id)
+  VALUES ( "${data.businessName}", "${data.businessDescription}", "${data["ownerFull Name"]}", "${data.email}", "${data.phone}", 1, 28);`)
+});
+
+// HR signup queries
+app.post("/signup/hr", (req: any, res: any) => {
+ // console.log(req.body);
+  const data = req.body
+   con.query(`INSERT INTO user_logins (role_id, login_email, login_password, date_created)
+   VALUES (2, "${data.email}", "${data.password}", 2023-03-02);`)
+
+  con.query(`INSERT INTO employees (fullname, employee_id, description, phone, user_id)
+  VALUES ("${data.fullName}", "${data.employeeID}", "${data.description}", "${data.phone}", 29);`)
+});
+
+
+/* RESOURCES (GRANTS, SCHOLARSHIPS, PROGRAMS) */
 
 // basic resources get req -- all data from resources table
 app.get('/resources', (req: any, res: any) => {
@@ -61,6 +120,9 @@ app.get('/resource', (req: any, res: any) => {
     // console.log(results);
   })
 })
+
+
+/* MENTORS PAGE */
 
 // OLD QUERY – mentors table as-is in MySQL
 app.get('/mentors', (req: any, res: any) => {
@@ -81,6 +143,8 @@ app.get('/mentor-interests', (req: any, res: any) => {
   })
 })
 
-app.listen(5000, () => {
+
+// telling the express server to listen on port 5000
+app.listen(port, () => {
   console.log(`Server is running on port ${port}.`)
 })
