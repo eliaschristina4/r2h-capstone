@@ -51,7 +51,7 @@ app.get('/mentor-interests', (req: any, res: any) => {
     res.send(results);
     // console.log(results);
   })
-})
+});
 
 app.get('/resource', (req: any, res: any) => {
   con.query("SELECT resources.description, resources.title, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {

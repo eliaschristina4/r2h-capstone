@@ -1,11 +1,9 @@
-/*
+/* 
 RED: rgb(227, 24, 55)
 BLUE: rgb(41, 68, 129)
 */
 
 .Resources{
-    /* display: flex;
-    flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: black;
@@ -16,13 +14,13 @@ BLUE: rgb(41, 68, 129)
     text-align: center;
     color: rgb(227, 24, 55);
     font-weight: bolder;
-    font-size: 3em;
+    font-size: 2em; /* Decrease the font-size for smaller screens */
 }
 
 /* p tag text */
 .intro{
     font-size: 1rem;
-    padding: 0 100px 0 100px;
+    padding: 0 50px 0 50px; /* Decrease the padding for smaller screens */
 }
 
 
@@ -31,6 +29,7 @@ BLUE: rgb(41, 68, 129)
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 35px;
 }
 
 .btn-container button {
@@ -39,7 +38,7 @@ BLUE: rgb(41, 68, 129)
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px; /* Decrease the font-size for smaller screens */
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease-in-out;
@@ -73,7 +72,7 @@ BLUE: rgb(41, 68, 129)
 }
 
 .r-grid-container h3{
-    font-size: 2rem;
+    font-size: 1.5rem; /* Decrease the font-size for smaller screens */
 }
 
 .r-grid-container ol {
@@ -81,10 +80,42 @@ BLUE: rgb(41, 68, 129)
 }
 
 @media screen and (max-width: 768px) {
-    .btn-container button {
-        font-size: 0.8rem;
+    .r-grid-container {
+        grid-template-columns: 1fr; /* Change the grid to a single column for smaller screens */
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .grid-img {
+        height: auto;
+        width: 30%;
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 425px) {
+    .Resources {
+        margin-bottom: 25px;
+    }
+
+    .intro {
+        padding: 0 25px 0 25px;
+    }
+
+    .btn-container button {
+        padding: 6px 12px;
+        font-size: 9px;
+        width: 100%;
+    }
+
+    .grid-img {
+        height: auto;
+        width: 25%;
+    }
+
+    .r-grid-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .r-grid-container ol {
+        font-size: 1rem;
+    }
 }

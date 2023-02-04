@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../Styles/Resources.css';
 
-// const image = require(`../Images/silhouette-pfp.png`);
-
 export default function App () {
   // used to store all the data, the filtered data, and the term used to filter the data
   const [data, setData] = useState([]);
@@ -65,6 +63,7 @@ for (let button of buttons) {
       <p className='intro' >Our resources are derived from a combination of trust funds, grants, and foundations, each offering a wealth of knowledge and experience to be shared with mentors. 
         These funding sources bring a diverse range of expertise to the table, making them valuable assets to those they support.
       </p>
+        {/* To make it easier for mentors to find the resources that align with their field of interest, the latest resources are categorized below by subject matter. */}
 
       {/* RADIO BUTTONS: onClick triggers the handleButtonClick function above */}
       <div className='btn-container'>
@@ -81,7 +80,7 @@ for (let button of buttons) {
         {/* taking the filtered data, mapping through it, and plugging into the template below */}
         {filteredData.map(resource => (
           <div className='resource-outer-container' key={resource.id}>
-            <img className='grid-img' src={require(`../Images/BOA-icon/${resource.interest}-icon.png`)} alt={resource.interest} width={225} height={225} />
+            <img className='grid-img' src={require(`../Images/BOA-icon/${resource.interest}-icon.png`)} alt={resource.interest} width={200} height={200} />
             <div className='resource-text-container'>
               <h3>{resource.title} </h3>
               <ol>
