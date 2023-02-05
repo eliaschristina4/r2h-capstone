@@ -38,13 +38,13 @@ BLUE: rgb(41, 68, 129)
     margin: 60px auto 50px auto;
 } */
 
-.btn-container {
+/* .btn-container {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
     width: 1000px;
     margin: 50px auto;
-  }
+  } */
   
 .btn-container button {
     background-color: #eee;
@@ -55,16 +55,16 @@ BLUE: rgb(41, 68, 129)
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease-in-out;
-  }
+}
   
 .btn-container button:hover {
     background-color: #ddd;
-  }
+}
   
-.btn-container button:active {
-    transform: scale(0.95);
+.btn-container button.selected {
     background-color: rgb(227, 24, 55);
-  }
+    transform: scale(1);
+}
 
 /* .Mentors label {
     margin-right: 30px;

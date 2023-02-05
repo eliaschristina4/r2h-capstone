@@ -25,7 +25,8 @@ app.get("/", function (req, res) {
     res.send("Hello world!");
 });
 /* LOGIN PORTAL */
-// Grab log-in information from mysql db
+// Grab log-in information from database and validates email & password
+// If credentials do not match, return error message
 app.post('/login', function (req, res) {
     var data = req.body;
     console.log(data);
@@ -56,6 +57,21 @@ app.post('/login', function (req, res) {
         });
     });
 });
+// IS THIS SUPPOSED TO BE IN THIS FILE?
+// handleSubmit = async (e) => {
+//   e.preventDefault()
+//   const x = {
+//       email: this.state.login_email,
+//       password: this.state.login_password
+//   }
+//   axios.post("http://localhost:5000/login", x)
+//   const [rows, fields] = await conn.query(`SELECT * FROM table_name WHERE email = '${this.state.login_email}' AND password = '${this.state.login_password}'`);
+//   if (rows.length > 0) {
+//       this.setState({loggedIn: true})
+//   } else {
+//       this.setState({loggedIn: false})
+//   }
+// }
 /* SIGN UP PORTALS */
 // mentor signup queries
 app.post("/signup/mentor", function (req, res) {
@@ -90,10 +106,11 @@ app.get('/resources', function (req, res) {
 });
 // JOIN query on resources and interests table
 app.get('/resource', function (req, res) {
-    con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", function (err, results, fields) {
+    con.query("SELECT resources.description, resources.title, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", function (err, results, fields) {
         if (err)
             throw err;
-        res.send(results);
+        var x = results.sort(function () { return Math.random() - 0.5; });
+        res.send(x);
         // console.log(results);
     });
 });

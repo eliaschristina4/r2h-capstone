@@ -7,19 +7,21 @@ This repository was created with the task given to each of our group members of 
 ***
 
 For this assignment, we came up with the idea to create an application for Bank of America, in order to help small businesses connect with mentors and bridge the gap between loan lending and business funding. Mentors can sign-up and list their business interests, as well as businesses having the option to list their interests, which they are then matched with one another to help progress toward financial growth through the use of company-issued & 3rd party grants. We have a sign-up sheet for our business/business owners that take:
-**Business Name**
-**Owner Full Name**
-**Business Description**
-**Business Interests** _(What the company/mentor specializes in or tends to focus on in their practice)_
-**Email Address**
-**Phone Number**
-**Password**
-**Confirm Password**
+
+1. **Business Name**
+2. **Owner Full Name**
+3. **Business Description**
+4. **Business Interests** _(What the company/mentor specializes in or tends to focus on in their practice)_
+5. **Email Address**
+6. **Phone Number**
+7. **Password**
+8. **Confirm Password**
 
 This form also doubles as a sign-up form for our mentors as well. When clicking “Sign up as a Mentor” down below, it takes you to a new sign-up sheet where the first 3 sections are now labeled as:
-**Full Name**
-**Profession**
-**Mentor Description** _(What they’re passionate to help people do and or achieve in their line of work/business)_
+
+1. **Full Name**
+2. **Profession**
+3. **Mentor Description** _(What they’re passionate to help people do and or achieve in their line of work/business)_
 
 ***
 

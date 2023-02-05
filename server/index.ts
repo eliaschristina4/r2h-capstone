@@ -31,7 +31,8 @@ app.get( "/", ( req: any, res: any ) => {
 
 /* LOGIN PORTAL */
 
-// Grab log-in information from mysql db
+// Grab log-in information from database and validates email & password
+// If credentials do not match, return error message
 app.post('/login', (req: any, res: any) => {
   const data = req.body;
   console.log(data);
@@ -61,6 +62,22 @@ app.post('/login', (req: any, res: any) => {
     });
   });
 });
+
+// IS THIS SUPPOSED TO BE IN THIS FILE?
+// handleSubmit = async (e) => {
+//   e.preventDefault()
+//   const x = {
+//       email: this.state.login_email,
+//       password: this.state.login_password
+//   }
+//   axios.post("http://localhost:5000/login", x)
+//   const [rows, fields] = await conn.query(`SELECT * FROM table_name WHERE email = '${this.state.login_email}' AND password = '${this.state.login_password}'`);
+//   if (rows.length > 0) {
+//       this.setState({loggedIn: true})
+//   } else {
+//       this.setState({loggedIn: false})
+//   }
+// }
 
 
 /* SIGN UP PORTALS */
@@ -110,16 +127,17 @@ app.get('/resources', (req: any, res: any) => {
     res.send(results);
     // console.log(results);
   })
-})
+});
 
 // JOIN query on resources and interests table
 app.get('/resource', (req: any, res: any) => {
-  con.query("SELECT resources.id, resources.title, resources.description, resources.monetary_value, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
+  con.query("SELECT resources.description, resources.title, interests.name AS interest FROM resources JOIN interests ON resources.interest_id = interests.id", (err: any, results: any, fields: any) => {
     if(err) throw err;
-    res.send(results);
+    const x = results.sort(() => Math.random()- 0.5)
+    res.send(x);
     // console.log(results);
   })
-})
+});
 
 
 /* MENTORS PAGE */
@@ -131,7 +149,7 @@ app.get('/mentors', (req: any, res: any) => {
     res.send(results);
     // console.log(results);
   })
-})
+});
 
 // JOIN query on mentors and interests table
 // removed mentors.location because i think it got deleted from the mentors table in the rds somehow? and that's messing up the get/fetch requests :/
@@ -141,10 +159,10 @@ app.get('/mentor-interests', (req: any, res: any) => {
     res.send(results);
     // console.log(results);
   })
-})
+});
 
 
 // telling the express server to listen on port 5000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}.`)
-})
+});

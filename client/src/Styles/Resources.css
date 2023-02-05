@@ -1,0 +1,121 @@
+/* 
+RED: rgb(227, 24, 55)
+BLUE: rgb(41, 68, 129)
+*/
+
+.Resources{
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-bottom: 100px;
+}
+
+.Resources h1 {
+    text-align: center;
+    color: rgb(227, 24, 55);
+    font-weight: bolder;
+    font-size: 2em; /* Decrease the font-size for smaller screens */
+}
+
+/* p tag text */
+.intro{
+    font-size: 1rem;
+    padding: 0 50px 0 50px; /* Decrease the padding for smaller screens */
+}
+
+
+/* FILTER BUTTONS */
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 35px;
+}
+
+.btn-container button {
+    background-color: rgb(41, 68, 129);
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px; /* Decrease the font-size for smaller screens */
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-container button:hover {
+    background-color: rgb(227, 24, 55);
+}
+
+.btn-container button.selected {
+    background-color: rgb(227, 24, 55);
+    transform: scale(1);
+}
+
+.r-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 35px auto;
+  }
+  
+.grid-img{
+    display: flex;
+    align-self: center;
+}
+
+.resource-outer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.r-grid-container h3{
+    font-size: 1.5rem; /* Decrease the font-size for smaller screens */
+}
+
+.r-grid-container ol {
+    font-size: larger;
+}
+
+@media screen and (max-width: 768px) {
+    .r-grid-container {
+        grid-template-columns: 1fr; /* Change the grid to a single column for smaller screens */
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .grid-img {
+        height: auto;
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .Resources {
+        margin-bottom: 25px;
+    }
+
+    .intro {
+        padding: 0 25px 0 25px;
+    }
+
+    .btn-container button {
+        padding: 6px 12px;
+        font-size: 9px;
+        width: 100%;
+    }
+
+    .grid-img {
+        height: auto;
+        width: 25%;
+    }
+
+    .r-grid-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .r-grid-container ol {
+        font-size: 1rem;
+    }
+}
