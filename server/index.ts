@@ -108,14 +108,14 @@ app.post("/signup/business", (req: any, res: any) => {
 
 // HR signup queries
 app.post("/signup/hr", (req: any, res: any) => {
- // console.log(req.body);
-  const data = req.body
-   con.query(`INSERT INTO user_logins (role_id, login_email, login_password, date_created)
-   VALUES (2, "${data.email}", "${data.password}", 2023-03-02);`)
-
-  con.query(`INSERT INTO employees (fullname, employee_id, description, phone, user_id)
-  VALUES ("${data.fullName}", "${data.employeeID}", "${data.description}", "${data.phone}", 29);`)
-});
+  // console.log(req.body);
+   const data = req.body
+    con.query(`INSERT INTO user_logins (role_id, login_email, login_password, date_created)
+    VALUES (2, "${data.email}", "${data.password}", 2023-03-02);`)
+ 
+   con.query(`INSERT INTO employees (fullname, employee_id, description, phone, user_id)
+   VALUES ("${data.fullName}", "${data.employeeID}", "${data.description}", "${data.phone}", 29);`)
+ });
 
 
 /* RESOURCES (GRANTS, SCHOLARSHIPS, PROGRAMS) */
