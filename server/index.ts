@@ -1,3 +1,10 @@
+/* in terminal:
+
+1. /server - tsc index.ts --watch
+2. /server - npm start
+3. /client - npm start
+*/
+
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");

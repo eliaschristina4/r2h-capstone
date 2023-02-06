@@ -1,3 +1,9 @@
+/* in terminal:
+
+1. /server - tsc index.ts --watch
+2. /server - npm start
+3. /client - npm start
+*/
 var express = require("express");
 var cors = require("cors");
 var mysql = require("mysql");
@@ -91,8 +97,8 @@ app.post("/signup/business", function (req, res) {
 app.post("/signup/hr", function (req, res) {
     // console.log(req.body);
     var data = req.body;
-    con.query("INSERT INTO user_logins (role_id, login_email, login_password, date_created)\n   VALUES (2, \"".concat(data.email, "\", \"").concat(data.password, "\", 2023-03-02);"));
-    con.query("INSERT INTO employees (fullname, employee_id, description, phone, user_id)\n  VALUES (\"".concat(data.fullName, "\", \"").concat(data.employeeID, "\", \"").concat(data.description, "\", \"").concat(data.phone, "\", 29);"));
+    con.query("INSERT INTO user_logins (role_id, login_email, login_password, date_created)\n    VALUES (2, \"".concat(data.email, "\", \"").concat(data.password, "\", 2023-03-02);"));
+    con.query("INSERT INTO employees (fullname, employee_id, description, phone, user_id)\n   VALUES (\"".concat(data.fullName, "\", \"").concat(data.employeeID, "\", \"").concat(data.description, "\", \"").concat(data.phone, "\", 29);"));
 });
 /* RESOURCES (GRANTS, SCHOLARSHIPS, PROGRAMS) */
 // basic resources get req -- all data from resources table
