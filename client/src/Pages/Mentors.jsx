@@ -53,8 +53,8 @@ export default function Mentors () {
   }, [data, filterTerm]);
 
   // when any of the radio buttons change, trigger this function that sets the filterTerm state variable to their value, which is then filtered again above
-  const handleChange = event => {
-    setFilterTerm(event.target.value);
+  const handleChange = id => {
+    setFilterTerm(id);
   };
 
   // so that the page doesn't show blank in case the data is still being fetched OR the fetch encounters an error
@@ -69,13 +69,13 @@ export default function Mentors () {
 
       {/* FILTER BUTTONS: onChange triggers the handleChange function above */}
       <div className='btn-container'>
-        <button className={filterTerm === '*' ? 'active' : ''} id='all' value='*' onClick={() => setFilterTerm('')}>All</button>
-        <button className={filterTerm === 'technology' ? 'active' : ""} id='technology' value='technology' onClick={() => setFilterTerm('technology')}>Technology</button>
-        <button className={filterTerm === 'education' ? 'active' : ""} id='education' value='education' onClick={() => setFilterTerm('education')}>Education</button>
-        <button className={filterTerm === 'retail' ? 'active' : ""} id='retail' value='retail' onClick={() => setFilterTerm('retail')}>Retail</button>
-        <button className={filterTerm === 'restaurant' ? 'active' : ""} id='restaurant' value='restaurant' onClick={() => setFilterTerm('restaurant')}>Restaurant</button>
-        <button className={filterTerm === 'logistics' ? 'active' : ""} id='logistics' value='logistics' onClick={() => setFilterTerm('logistics')}>Logistics</button>
-        <button className={filterTerm === 'health' ? 'active' : ""} id='health' value='health' onClick={() => setFilterTerm('health')}>Health</button>
+        <button className={filterTerm === '' ? 'active' : ''} id='all' value='all' onClick={() => handleChange('')}>All</button>
+        <button className={filterTerm === 'technology' ? 'active' : ""} id='technology' value='technology' onClick={() => handleChange('technology')}>Technology</button>
+        <button className={filterTerm === 'education' ? 'active' : ""} id='education' value='education' onClick={() => handleChange('education')}>Education</button>
+        <button className={filterTerm === 'retail' ? 'active' : ""} id='retail' value='retail' onClick={() => handleChange('retail')}>Retail</button>
+        <button className={filterTerm === 'restaurant' ? 'active' : ""} id='restaurant' value='restaurant' onClick={() => handleChange('restaurant')}>Restaurant</button>
+        <button className={filterTerm === 'logistics' ? 'active' : ""} id='logistics' value='logistics' onClick={() => handleChange('logistics')}>Logistics</button>
+        <button className={filterTerm === 'health' ? 'active' : ""} id='health' value='health' onClick={() => handleChange('health')}>Health</button>
       </div>
 
       {/* container that holds all the imported mentor data and sets them in a grid */}

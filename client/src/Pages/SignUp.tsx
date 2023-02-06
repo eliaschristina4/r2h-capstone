@@ -1,22 +1,18 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import axios from "axios"
 // Components
-// import Footer from "../Components/Footer";
-// import Header from "../Components/Header";
+// import { Footer } from "../Components/Footer";
+// import { Header } from "../Components/Header";
 import { Form } from "../Components/SignUp/Form";
 import { InterestsRoles } from "../Components/SignUp/InterestsRoles";
-
 // CSS
 import "../Styles/SignUp.css";
-
 // Images
 import mentorIcon from "../Images/SignUp/mentor-icon.png";
 import businessIcon from "../Images/SignUp/business-icon.png";
 import hrIcon from "../Images/SignUp/hr-icon.png";
-
 // Interface
-
 // Sign Up Form data
 interface FormSignUp {
   title: string;
@@ -25,7 +21,6 @@ interface FormSignUp {
   formTag2: string;
   formTag3: string;
 }
-
 // Sign Up Roles
 interface Roles {
   title: string;
@@ -37,12 +32,10 @@ interface Roles {
   role5: string;
   role6: string;
 }
-
 interface SignUpI {
   form: FormSignUp;
   roles: Roles;
 }
-
 const SignUp = () => {
   const navigate = useNavigate();
   const [signUpForm, setSignUpForm] = useState<SignUpI>({
@@ -64,14 +57,10 @@ const SignUp = () => {
       role6: "",
     },
   });
-
   const [roles, setRoles] = useState<string[]>([]);
-
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [passwordError, setPasswordError] = useState<boolean>(false);
-
   const [opacity, setOpacity] = useState(1);
-
   const handleChange = (role: string) => {
     if (roles.includes(role)) {
       setRoles(roles.filter((i) => i !== role));
@@ -79,9 +68,7 @@ const SignUp = () => {
       setRoles([...roles, role]);
     }
   };
-
   const parameters: string | undefined = useParams().user;
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target.form);
@@ -90,10 +77,10 @@ const SignUp = () => {
       setPasswordError(true);
     } else {
       setPasswordError(false);
-      console.log({ ...data, interests: roles });
+      const formData = ({ ...data, interests: roles });
+      axios.post(`http://localhost:5000/signup/${parameters}`, formData);
     }
   };
-
   useEffect(() => {
     if (parameters === "business") {
       setSignUpForm(tempData.business);
@@ -103,11 +90,9 @@ const SignUp = () => {
       setOpacity(1);
     } else if (parameters === "hr") {
       setOpacity(0);
-
       setSignUpForm(tempData.hr);
     }
   }, [parameters]);
-
   return (
     <section>
       {/* <Header /> */}
@@ -132,9 +117,7 @@ const SignUp = () => {
                 ></img>
               </section>
             </section>
-
             <div className="divider"></div>
-
             <section className="sign-up-bottom-section">
               <section className="sign-up-interests">
                 <InterestsRoles
@@ -156,6 +139,8 @@ const SignUp = () => {
     </section>
   );
 };
+
+export default SignUp;
 
 const tempData = {
   business: {
@@ -219,5 +204,3 @@ const tempData = {
     },
   },
 };
-
-export default SignUp;

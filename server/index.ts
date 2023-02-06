@@ -127,7 +127,7 @@ app.get('/resources', (req: any, res: any) => {
     res.send(results);
     // console.log(results);
   })
-});
+})
 
 // JOIN query on resources and interests table
 app.get('/resource', (req: any, res: any) => {
@@ -137,7 +137,7 @@ app.get('/resource', (req: any, res: any) => {
     res.send(x);
     // console.log(results);
   })
-});
+})
 
 
 /* MENTORS PAGE */

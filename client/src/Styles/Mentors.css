@@ -61,7 +61,7 @@ BLUE: rgb(41, 68, 129)
     background-color: #ddd;
 }
   
-.btn-container button.selected {
+.btn-container button.active {
     background-color: rgb(227, 24, 55);
     transform: scale(1);
 }
